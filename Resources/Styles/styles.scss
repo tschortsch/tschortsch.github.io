@@ -4,6 +4,7 @@ $color-github: #323031;
 $color-xing: #005051;
 $color-tumblr: #2C4762;
 $block-margin: 30px;
+$profile-image-size: 170px;
 
 body {
     margin-top: 40px;
@@ -25,14 +26,14 @@ body {
 }
 
 .circular {
-	width: 170px;
-	height: 170px;
-    border-radius: 170px;
-    background-size: 170px;
+	width: $profile-image-size;
+	height: $profile-image-size;
+    border-radius: $profile-image-size;
+    background-size: $profile-image-size;
     background-repeat: no-repeat;
 
     &.tschortsch {
-        background-image: url("../Images/tschortsch.jpg");
+        background-image: url("//www.gravatar.com/avatar/41c42656cf67fce9e98e1053b3c0c889?s=" + ($profile-image-size * 2));
     }
 }
 
