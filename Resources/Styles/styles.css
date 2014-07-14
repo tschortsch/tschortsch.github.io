@@ -4,6 +4,9 @@ body {
   font-family: 'Indie Flower', cursive;
   font-size: 18px; }
 
+h1 {
+  font-weight: 600; }
+
 .fa-ul > li {
   margin-bottom: 3px; }
 
