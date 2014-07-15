@@ -67,7 +67,7 @@
 
                 <!-- footer -->
                 <footer>
-                    &copy; 2014 Jürg Hunziker
+                    &copy; <span id="current-year">2014</span> Jürg Hunziker
                 </footer>
             </div>
             <div class="col-sm-3"></div>
@@ -79,7 +79,10 @@
     <!-- Latest compiled and minified JavaScript -->
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
     <script>
+        // enable tooltips
         $('.social-buttons a').tooltip();
+        // set current year in copyright
+        $('#current-year').html(new Date().getFullYear());
     </script>
     <!-- Google Analytics -->
     <script>
