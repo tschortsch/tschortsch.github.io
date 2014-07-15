@@ -19,11 +19,11 @@
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
-      <script src="//oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-      <script src="//oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+		<script src="//oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+		<script src="//oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
 
-
+	<!-- Page Styles -->
 	<link rel="stylesheet" href="./Resources/Styles/styles.css">
 </head>
 <body>
@@ -45,19 +45,19 @@
 				</ul>
 
 				<div class="social-buttons">
-					<a href="https://twitter.com/tschortsch85" target="_blank" class="btn btn-default twitter" role="button">
+					<a href="https://twitter.com/tschortsch85" target="_blank" class="btn btn-default twitter" role="button" data-toggle="tooltip" data-placement="top" title="Twitter">
 						<i class="fa fa-twitter"></i>
 					</a>
-					<a href="https://github.com/tschortsch" target="_blank" class="btn btn-default github" role="button">
+					<a href="https://github.com/tschortsch" target="_blank" class="btn btn-default github" role="button" role="button" data-toggle="tooltip" data-placement="top" title="GitHub">
 						<i class="fa fa-github"></i>
 					</a>
-					<a href="https://www.facebook.com/juerg.hunziker" target="_blank" class="btn btn-default facebook" role="button">
+					<a href="https://www.facebook.com/juerg.hunziker" target="_blank" class="btn btn-default facebook" role="button" role="button" data-toggle="tooltip" data-placement="top" title="Facebook">
 						<i class="fa fa-facebook"></i>
 					</a>
-                    <a href="http://blog.juerghunziker.ch" target="_blank" class="btn btn-default tumblr" role="button">
+                    <a href="http://blog.juerghunziker.ch" target="_blank" class="btn btn-default tumblr" role="button" role="button" data-toggle="tooltip" data-placement="top" title="Blog">
                         <i class="fa fa-tumblr"></i>
                     </a>
-					<a href="https://www.xing.com/profile/Juerg_Hunziker" target="_blank" class="btn btn-default xing" role="button">
+					<a href="https://www.xing.com/profile/Juerg_Hunziker" target="_blank" class="btn btn-default xing" role="button" role="button" data-toggle="tooltip" data-placement="top" title="Xing">
 						<i class="fa fa-xing"></i>
 					</a>
 				</div>
@@ -66,15 +66,22 @@
 		</div>
 	</div>
 
+	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+	<!-- Latest compiled and minified JavaScript -->
+	<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+	<script>
+		$('.social-buttons a').tooltip();
+	</script>
+	<!-- Google Analytics -->
     <script>
-        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
             (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
                 m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
         })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
         ga('create', 'UA-21850230-1', 'auto');
         ga('send', 'pageview');
-
     </script>
 </body>
 </html>
