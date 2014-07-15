@@ -3,9 +3,11 @@ $color-facebook: #3C599F;
 $color-github: #323031;
 $color-xing: #005051;
 $color-tumblr: #2C4762;
+$color-footer: #949494;
 $block-margin: 30px;
-$profile-image-size: 170px;
+$avatar-size: 170px;
 
+// Global
 body {
     margin-top: 40px;
     margin-bottom: 40px;
@@ -17,26 +19,21 @@ h1 {
     font-weight: 600;
 }
 
-.fa-ul>li {
-    margin-bottom: 3px;
+// Avatar
+.avatar {
+    width: $avatar-size;
 }
 
+// Facts
 .facts {
     margin-top: $block-margin;
-}
 
-.circular {
-	width: $profile-image-size;
-	height: $profile-image-size;
-    border-radius: $profile-image-size;
-    background-size: $profile-image-size;
-    background-repeat: no-repeat;
-
-    &.tschortsch {
-        background-image: url("//www.gravatar.com/avatar/41c42656cf67fce9e98e1053b3c0c889?s=" + ($profile-image-size * 2));
+    >li {
+        margin-bottom: 3px;
     }
 }
 
+// Social buttons
 .social-buttons {
     margin-top: $block-margin + 10px;
 
@@ -65,4 +62,11 @@ h1 {
             background-color: $color-tumblr;
         }
     }
+}
+
+// Footer
+footer {
+    color: $color-footer;
+    font-size: 14px;
+    margin-top: 10px;
 }
