@@ -23,18 +23,10 @@ function getRule(ruleName) {
             }
         }
     }
-}
+};
 
-function initBirdMoveAnimation() {
-    var birdMoveRule = getRule("bird-move"),
-        targetPositionOffsetX, targetPositionOffsetY, distanceX, distanceY,
-        idleActive = false,
-        idleTime = 10000,
-        startAnimation,
-        timeoutTimer;
-
+function adjustBirdMoveAnimation(birdMoveRule) {
     if(birdMoveRule) {
-        // ajust bird move animation by getting offset of web elements
         targetPositionOffsetX = 1;
         targetPositionOffsetY = 13;
         distanceX = $('.target-position').offset().left - $('.social-buttons a.twitter').offset().left - targetPositionOffsetX;
@@ -42,7 +34,18 @@ function initBirdMoveAnimation() {
         birdMoveRule.deleteRule("100%");
         birdMoveRule.insertRule("100% { -webkit-transform: scaleX(-1); top: " + distanceY + "px; left: " + distanceX + "px; }");
     }
+};
 
+function initBirdMoveAnimation() {
+    var birdMoveRule,
+        targetPositionOffsetX, targetPositionOffsetY, distanceX, distanceY,
+        idleActive = false,
+        idleTime = 1000,
+        startAnimation,
+        timeoutTimer;
+
+    birdMoveRule = getRule("bird-move");
+    adjustBirdMoveAnimation(birdMoveRule);
     startAnimation = function() {
         idleActive = true;
         $('.twitter-bird-box').show();
@@ -60,4 +63,8 @@ function initBirdMoveAnimation() {
         clearTimeout(timeoutTimer);
         timeoutTimer = setTimeout(startAnimation, idleTime);
     });
-}
+
+    $(window).resize(function() {
+        adjustBirdMoveAnimation(birdMoveRule);
+    });
+};
