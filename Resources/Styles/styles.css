@@ -82,57 +82,81 @@ h1 {
   0% {
     top: 0px;
     left: 0px;
+    -webkit-transform: scaleX(1);
+    -moz-transform: scaleX(1);
     transform: scaleX(1); }
 
   49% {
+    -webkit-transform: scaleX(1);
+    -moz-transform: scaleX(1);
     transform: scaleX(1); }
 
   50% {
     top: -200px;
     left: 300px;
+    -webkit-transform: scaleX(-1);
+    -moz-transform: scaleX(-1);
     transform: scaleX(-1); }
 
   100% {
     top: -315px;
     left: 205px;
+    -webkit-transform: scaleX(-1);
+    -moz-transform: scaleX(-1);
     transform: scaleX(-1); } }
 
 @-moz-keyframes bird-move {
   0% {
     top: 0px;
     left: 0px;
+    -webkit-transform: scaleX(1);
+    -moz-transform: scaleX(1);
     transform: scaleX(1); }
 
   49% {
+    -webkit-transform: scaleX(1);
+    -moz-transform: scaleX(1);
     transform: scaleX(1); }
 
   50% {
     top: -200px;
     left: 300px;
+    -webkit-transform: scaleX(-1);
+    -moz-transform: scaleX(-1);
     transform: scaleX(-1); }
 
   100% {
     top: -315px;
     left: 205px;
+    -webkit-transform: scaleX(-1);
+    -moz-transform: scaleX(-1);
     transform: scaleX(-1); } }
 
 @keyframes bird-move {
   0% {
     top: 0px;
     left: 0px;
+    -webkit-transform: scaleX(1);
+    -moz-transform: scaleX(1);
     transform: scaleX(1); }
 
   49% {
+    -webkit-transform: scaleX(1);
+    -moz-transform: scaleX(1);
     transform: scaleX(1); }
 
   50% {
     top: -200px;
     left: 300px;
+    -webkit-transform: scaleX(-1);
+    -moz-transform: scaleX(-1);
     transform: scaleX(-1); }
 
   100% {
     top: -315px;
     left: 205px;
+    -webkit-transform: scaleX(-1);
+    -moz-transform: scaleX(-1);
     transform: scaleX(-1); } }
 
 footer {
