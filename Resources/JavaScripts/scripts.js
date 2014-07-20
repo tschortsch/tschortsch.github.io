@@ -50,7 +50,7 @@ function initBirdMoveAnimation() {
         $('.fa-twitter').hide();
     };
     timeoutTimer = setTimeout(startAnimation, idleTime);
-    $('body').bind('mousemove scroll mousedown keydown', function(event) {
+    $('body').bind('mousemove scroll touchmove mousedown keydown', function(event) {
         if(idleActive) {
             // restore website / stop animation
             $('.fa-twitter').show();
