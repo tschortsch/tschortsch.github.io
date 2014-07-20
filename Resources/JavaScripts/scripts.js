@@ -34,7 +34,7 @@ function adjustBirdMoveAnimation(birdMoveRule) {
         distanceX = $('.target-position').offset().left - $('.social-buttons a.twitter').offset().left - targetPositionOffsetX;
         distanceY = $('.target-position').offset().top - $('.social-buttons a.twitter').offset().top - targetPositionOffsetY;
         birdMoveRule.deleteRule("100%");
-        birdMoveRule.insertRule("100% { -webkit-transform: scaleX(-1); top: " + distanceY + "px; left: " + distanceX + "px; }");
+        birdMoveRule.insertRule("100% { transform: scaleX(-1); top: " + distanceY + "px; left: " + distanceX + "px; }");
     }
 };
 

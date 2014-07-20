@@ -52,6 +52,13 @@ h1 {
   100% {
     background-position: -90px 0; } }
 
+@-moz-keyframes fly {
+  0% {
+    background-position: 0 0; }
+
+  100% {
+    background-position: -90px 0; } }
+
 @keyframes fly {
   from {
     background-position: 0 0; }
@@ -65,26 +72,68 @@ h1 {
 .twitter-bird-move {
   position: relative;
   -webkit-animation: bird-move 5s steps(100) 0;
-  -webkit-animation-fill-mode: forwards; }
+  -webkit-animation-fill-mode: forwards;
+  -moz-animation: bird-move 5s steps(100) 0;
+  -moz-animation-fill-mode: forwards;
+  animation: bird-move 5s steps(100) 0;
+  animation-fill-mode: forwards; }
 
 @-webkit-keyframes bird-move {
   0% {
     top: 0px;
     left: 0px;
-    -webkit-transform: scaleX(1); }
+    transform: scaleX(1); }
 
   49% {
-    -webkit-transform: scaleX(1); }
+    transform: scaleX(1); }
 
   50% {
     top: -200px;
     left: 300px;
-    -webkit-transform: scaleX(-1); }
+    transform: scaleX(-1); }
 
   100% {
     top: -315px;
     left: 205px;
-    -webkit-transform: scaleX(-1); } }
+    transform: scaleX(-1); } }
+
+@-moz-keyframes bird-move {
+  0% {
+    top: 0px;
+    left: 0px;
+    transform: scaleX(1); }
+
+  49% {
+    transform: scaleX(1); }
+
+  50% {
+    top: -200px;
+    left: 300px;
+    transform: scaleX(-1); }
+
+  100% {
+    top: -315px;
+    left: 205px;
+    transform: scaleX(-1); } }
+
+@keyframes bird-move {
+  0% {
+    top: 0px;
+    left: 0px;
+    transform: scaleX(1); }
+
+  49% {
+    transform: scaleX(1); }
+
+  50% {
+    top: -200px;
+    left: 300px;
+    transform: scaleX(-1); }
+
+  100% {
+    top: -315px;
+    left: 205px;
+    transform: scaleX(-1); } }
 
 footer {
   color: #949494;
