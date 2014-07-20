@@ -53,7 +53,7 @@ function stopBirdMoveAnimation() {
 };
 function initBirdMoveAnimation() {
     var birdMoveRule,
-        idleTime = 100,
+        idleTime = 10000,
         timeoutTimer;
 
     birdMoveRule = getRule("bird-move");
