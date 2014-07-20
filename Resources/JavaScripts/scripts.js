@@ -26,6 +26,8 @@ function getRule(ruleName) {
 };
 
 function adjustBirdMoveAnimation(birdMoveRule) {
+    var
+        targetPositionOffsetX, targetPositionOffsetY, distanceX, distanceY;
     if(birdMoveRule) {
         targetPositionOffsetX = 1;
         targetPositionOffsetY = 13;
@@ -36,35 +38,35 @@ function adjustBirdMoveAnimation(birdMoveRule) {
     }
 };
 
+function startBirdMoveAnimation() {
+    $('.fa-twitter').hide();
+    $('.twitter-bird-box').show();
+    $('.twitter-bird-box').addClass('twitter-bird-move');
+};
+function stopBirdMoveAnimation() {
+    $('.twitter-bird-box').hide();
+    $('.twitter-bird-box').removeClass('twitter-bird-move');
+    $('.fa-twitter').show();
+};
 function initBirdMoveAnimation() {
     var birdMoveRule,
-        targetPositionOffsetX, targetPositionOffsetY, distanceX, distanceY,
-        idleActive = false,
         idleTime = 1000,
-        startAnimation,
         timeoutTimer;
 
     birdMoveRule = getRule("bird-move");
     adjustBirdMoveAnimation(birdMoveRule);
-    startAnimation = function() {
-        idleActive = true;
-        $('.twitter-bird-box').show();
-        $('.twitter-bird-box').addClass('twitter-bird-move');
-        $('.fa-twitter').hide();
-    };
-    timeoutTimer = setTimeout(startAnimation, idleTime);
+
+    timeoutTimer = setTimeout(startBirdMoveAnimation, idleTime);
     $('body').bind('mousemove scroll touchmove mousedown keydown', function(event) {
-        if(idleActive) {
-            // restore website / stop animation
-            $('.fa-twitter').show();
-            $('.twitter-bird-box').hide();
-            $('.twitter-bird-box').removeClass('twitter-bird-move');
-        }
+        stopBirdMoveAnimation();
         clearTimeout(timeoutTimer);
-        timeoutTimer = setTimeout(startAnimation, idleTime);
+        timeoutTimer = setTimeout(startBirdMoveAnimation, idleTime);
     });
 
     $(window).resize(function() {
+        stopBirdMoveAnimation();
+        clearTimeout(timeoutTimer);
+        timeoutTimer = setTimeout(startBirdMoveAnimation, idleTime);
         adjustBirdMoveAnimation(birdMoveRule);
     });
 };
