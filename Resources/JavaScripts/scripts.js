@@ -11,16 +11,15 @@ $(document).ready(function() {
 
 // Returns css rule by name
 function getRule(ruleName) {
-    var rule,
-        ss = document.styleSheets,
-        i, x;
+    var ss = document.styleSheets,
+        rule, i, x;
 
     for (i = 0; i < ss.length; ++i) {
         if(ss[i].cssRules) {
             // loop through all the rules
             for (x = 0; x < ss[i].cssRules.length; ++x) {
                 rule = ss[i].cssRules[x];
-                if (rule.type === CSSRule.KEYFRAMES_RULE && rule.name === ruleName) {
+                if((rule.type === window.CSSRule.KEYFRAMES_RULE || rule.type === window.CSSRule.WEBKIT_KEYFRAMES_RULE || rule.type === window.CSSRule.MOZ_KEYFRAMES_RULE) && rule.name === ruleName) {
                     return rule;
                 }
             }
@@ -29,8 +28,8 @@ function getRule(ruleName) {
 };
 
 function adjustBirdMoveAnimation(birdMoveRule) {
-    var
-        targetPositionOffsetX, targetPositionOffsetY, distanceX, distanceY;
+    var targetPositionOffsetX, targetPositionOffsetY, distanceX, distanceY;
+
     if(birdMoveRule) {
         targetPositionOffsetX = 1;
         targetPositionOffsetY = 13;
