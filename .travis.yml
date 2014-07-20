@@ -1,0 +1,9 @@
+script: bundle exec rake travis
+
+env:
+  global:
+    secure: JfXDRE1++mNLOyIgIbLK7Yf2JkESo41RHhhlCXS2HIxxbWuIMpIJUPkFO8jUSF1bXnRCGBoPzOCk5KgXyoGslGU3DyNkMcEk63NgLKl8SL4BVggg8eHZo/UNlwoR48xpTQTotsa1X1xZqhAnM5tWWD1wcD2RRAZCNdjEIu+e7UY=
+
+branches:
+  only:
+    - master
