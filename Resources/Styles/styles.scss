@@ -67,7 +67,8 @@ h1 {
 
 // Bird move animation
 .twitter-bird {
-    background-image: url(../Images/twitter-bird-right-sprite.png);
+    background-image: url(../Images/twitter-bird-sprite.png);
+    background-size: 120px 30px;
     cursor: pointer;
     height: 30px;
     width: 30px;
