@@ -5,8 +5,11 @@ $(document).ready(function() {
     // set current year in copyright
     $('#current-year').html(new Date().getFullYear());
 
-    // wait 2sec to complete rendering of page before initializing bird move animation
-    setTimeout(initBirdMoveAnimation, 2000);
+    // only initialize animation if browser supports it (every browser but IE9 or older) (http://tanalin.com/en/articles/ie-version-js/)
+    if(!(document.all && !window.atob)) {
+        // wait 2sec to complete rendering of page before initializing bird move animation
+        setTimeout(initBirdMoveAnimation, 2000);
+    }
 });
 
 // Returns css rule by name
