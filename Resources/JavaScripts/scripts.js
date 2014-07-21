@@ -5,8 +5,11 @@ $(document).ready(function() {
     // set current year in copyright
     $('#current-year').html(new Date().getFullYear());
 
-    // wait 2sec to complete rendering of page before initializing bird move animation
-    setTimeout(initBirdMoveAnimation, 2000);
+    // only initialize animation if browser supports it (every browser but IE9 or older) (http://tanalin.com/en/articles/ie-version-js/)
+    if(!(document.all && !window.atob)) {
+        // wait 5sec to complete rendering of page before initializing bird move animation
+        setTimeout(initBirdMoveAnimation, 5000);
+    }
 });
 
 // Returns css rule by name
@@ -31,7 +34,7 @@ function adjustBirdMoveAnimation(birdMoveRule) {
     var targetPositionOffsetX, targetPositionOffsetY, distanceX, distanceY;
 
     if(birdMoveRule) {
-        targetPositionOffsetX = 1;
+        targetPositionOffsetX = 18;
         targetPositionOffsetY = 13;
         distanceX = $('.target-position').offset().left - $('.social-buttons a.twitter').offset().left - targetPositionOffsetX;
         distanceY = $('.target-position').offset().top - $('.social-buttons a.twitter').offset().top - targetPositionOffsetY;
@@ -42,33 +45,62 @@ function adjustBirdMoveAnimation(birdMoveRule) {
 
 function startBirdMoveAnimation() {
     $('.fa-twitter').hide();
-    $('.twitter-bird-box').show();
-    $('.twitter-bird-box').addClass('twitter-bird-move');
+    $('#twitter-bird-box').show();
+    $('#twitter-bird-box').addClass('twitter-bird-move');
+
+    // show followme tooltip after bird move animation is done
+    $('#twitter-bird').one('webkitAnimationEnd oanimationend MSAnimationEnd animationend',
+        showFollowMeTooltip
+    );
 };
 function stopBirdMoveAnimation() {
-    $('.twitter-bird-box').hide();
-    $('.twitter-bird-box').removeClass('twitter-bird-move');
+    hideFollowMeTooltip();
+    $('#twitter-bird-box').hide();
+    $('#twitter-bird-box').removeClass('twitter-bird-move');
     $('.fa-twitter').show();
 };
+function showFollowMeTooltip() {
+    var topOffset = 5,
+        leftOffset = -23,
+        originalTop, originalLeft;
+
+    $('#twitter-bird-box').tooltip('show');
+    originalTop = $('a.twitter div.tooltip').css("top").replace(/[^-\d\.]/g, '');
+    originalLeft = $('a.twitter div.tooltip').css("left").replace(/[^-\d\.]/g, '');
+    $('a.twitter div.tooltip').css("top", (parseInt(originalTop) + topOffset) + "px");
+    $('a.twitter div.tooltip').css("left", (parseInt(originalLeft) + leftOffset) + "px");
+}
+function hideFollowMeTooltip() {
+    $('#twitter-bird-box').tooltip('hide');
+}
+function resetBirdMoveAnimationTimer(birdMoveAnimationTimer, idleTime) {
+    stopBirdMoveAnimation();
+    clearTimeout(birdMoveAnimationTimer);
+    return setTimeout(startBirdMoveAnimation, idleTime);
+}
 function initBirdMoveAnimation() {
     var birdMoveRule,
         idleTime = 10000,
-        timeoutTimer;
+        birdMoveAnimationTimer;
 
     birdMoveRule = getRule("bird-move");
     adjustBirdMoveAnimation(birdMoveRule);
 
-    timeoutTimer = setTimeout(startBirdMoveAnimation, idleTime);
+    birdMoveAnimationTimer = setTimeout(startBirdMoveAnimation, idleTime);
     $('body').bind('mousemove scroll touchmove mousedown keydown', function(event) {
-        stopBirdMoveAnimation();
-        clearTimeout(timeoutTimer);
-        timeoutTimer = setTimeout(startBirdMoveAnimation, idleTime);
+        birdMoveAnimationTimer = resetBirdMoveAnimationTimer(birdMoveAnimationTimer, idleTime);
     });
 
     $(window).resize(function() {
-        stopBirdMoveAnimation();
-        clearTimeout(timeoutTimer);
-        timeoutTimer = setTimeout(startBirdMoveAnimation, idleTime);
+        birdMoveAnimationTimer = resetBirdMoveAnimationTimer(birdMoveAnimationTimer, idleTime);
         adjustBirdMoveAnimation(birdMoveRule);
+    });
+    $(window).blur(function(){
+        stopBirdMoveAnimation();
+        clearTimeout(birdMoveAnimationTimer);
+    });
+    $(window).focus(function(){
+        adjustBirdMoveAnimation(birdMoveRule);
+        birdMoveAnimationTimer = setTimeout(startBirdMoveAnimation, idleTime);
     });
 };

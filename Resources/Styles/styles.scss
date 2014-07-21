@@ -42,6 +42,20 @@ h1 {
         height: 40px;
         font-size: 18px;
         font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+
+        &.twitter {
+            div.tooltip {
+                font-family: 'Indie Flower', cursive;
+
+                .tooltip-inner {
+                    background-color: $color-twitter;
+                }
+                .tooltip-arrow {
+                    border-top-color: $color-twitter;
+                    left: 70% !important;
+                }
+            }
+        }
     }
 
     a:hover, a:active, a:focus {
@@ -66,7 +80,7 @@ h1 {
 }
 
 // Bird move animation
-.twitter-bird {
+#twitter-bird {
     background-image: url(../Images/twitter-bird-sprite.png);
     background-size: 120px 30px;
     cursor: pointer;
@@ -81,16 +95,18 @@ h1 {
     100% { background-position: -90px 0; }
 }
 @-moz-keyframes fly {
-     0% { background-position: 0 0; }
-     100% { background-position: -90px 0; }
- }
+    0% { background-position: 0 0; }
+    100% { background-position: -90px 0; }
+}
 @keyframes fly {
     from { background-position: 0 0; }
     to { background-position: -90px 0; }
 }
 
-.twitter-bird-box {
+#twitter-bird-box {
     display: none;
+    width: 30px;
+    height: 30px;
 }
 
 .twitter-bird-move {

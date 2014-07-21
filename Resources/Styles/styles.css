@@ -22,6 +22,13 @@ h1 {
     height: 40px;
     font-size: 18px;
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; }
+    .social-buttons a.twitter div.tooltip {
+      font-family: 'Indie Flower', cursive; }
+      .social-buttons a.twitter div.tooltip .tooltip-inner {
+        background-color: #1bb2e9; }
+      .social-buttons a.twitter div.tooltip .tooltip-arrow {
+        border-top-color: #1bb2e9;
+        left: 70% !important; }
   .social-buttons a:hover, .social-buttons a:active, .social-buttons a:focus {
     color: #fff;
     border-color: transparent; }
@@ -36,7 +43,7 @@ h1 {
     .social-buttons a:hover.tumblr, .social-buttons a:active.tumblr, .social-buttons a:focus.tumblr {
       background-color: #2c4762; }
 
-.twitter-bird {
+#twitter-bird {
   background-image: url(../Images/twitter-bird-sprite.png);
   background-size: 120px 30px;
   cursor: pointer;
@@ -67,8 +74,10 @@ h1 {
   to {
     background-position: -90px 0; } }
 
-.twitter-bird-box {
-  display: none; }
+#twitter-bird-box {
+  display: none;
+  width: 30px;
+  height: 30px; }
 
 .twitter-bird-move {
   position: relative;
