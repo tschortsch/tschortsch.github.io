@@ -53,6 +53,7 @@ function adjustBirdMoveAnimation(birdMoveRule) {
 function startBirdMoveAnimation() {
     $('.fa-twitter').hide();
     $('#twitter-bird-box').show();
+    $('#twitter-bird').addClass('twitter-bird-fly');
     $('#twitter-bird-box').addClass('twitter-bird-move');
 
     // show followme tooltip after bird move animation is done
@@ -61,9 +62,11 @@ function startBirdMoveAnimation() {
     );
 };
 function stopBirdMoveAnimation() {
+    $('#twitter-bird').off();
     hideFollowMeTooltip();
-    $('#twitter-bird-box').hide();
     $('#twitter-bird-box').removeClass('twitter-bird-move');
+    $('#twitter-bird').removeClass('twitter-bird-fly');
+    $('#twitter-bird-box').hide();
     $('.fa-twitter').show();
 };
 function showFollowMeTooltip() {
@@ -102,11 +105,11 @@ function initBirdMoveAnimation() {
         birdMoveAnimationTimer = resetBirdMoveAnimationTimer(birdMoveAnimationTimer, idleTime);
         adjustBirdMoveAnimation(birdMoveRule);
     });
-    $(window).blur(function(){
+    $(window).blur(function() {
         stopBirdMoveAnimation();
         clearTimeout(birdMoveAnimationTimer);
     });
-    $(window).focus(function(){
+    $(window).focus(function() {
         adjustBirdMoveAnimation(birdMoveRule);
         birdMoveAnimationTimer = setTimeout(startBirdMoveAnimation, idleTime);
     });
