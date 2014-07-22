@@ -85,11 +85,11 @@ h1 {
 
 .twitter-bird-move {
   position: relative;
-  -webkit-animation: bird-move 5s steps(100) 0;
+  -webkit-animation: bird-move 5s steps(100) 1;
   -webkit-animation-fill-mode: forwards;
-  -moz-animation: bird-move 5s steps(100) 0;
+  -moz-animation: bird-move 5s steps(100) 1;
   -moz-animation-fill-mode: forwards;
-  animation: bird-move 5s steps(100) 0;
+  animation: bird-move 5s steps(100) 1;
   animation-fill-mode: forwards; }
 
 @-webkit-keyframes bird-move {
