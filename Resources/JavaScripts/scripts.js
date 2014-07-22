@@ -18,12 +18,15 @@ function getRule(ruleName) {
         rule, i, x;
 
     for (i = 0; i < ss.length; ++i) {
-        if(ss[i].cssRules) {
-            // loop through all the rules
-            for (x = 0; x < ss[i].cssRules.length; ++x) {
-                rule = ss[i].cssRules[x];
-                if((rule.type === window.CSSRule.KEYFRAMES_RULE || rule.type === window.CSSRule.WEBKIT_KEYFRAMES_RULE || rule.type === window.CSSRule.MOZ_KEYFRAMES_RULE) && rule.name === ruleName) {
-                    return rule;
+        if(ss[i].href === document.URL + 'Resources/Styles/styles.css') {
+            console.log(ss[i]);
+            if(ss[i].cssRules) {
+                // loop through all the rules
+                for (x = 0; x < ss[i].cssRules.length; ++x) {
+                    rule = ss[i].cssRules[x];
+                    if((rule.type === window.CSSRule.KEYFRAMES_RULE || rule.type === window.CSSRule.WEBKIT_KEYFRAMES_RULE || rule.type === window.CSSRule.MOZ_KEYFRAMES_RULE) && rule.name === ruleName) {
+                        return rule;
+                    }
                 }
             }
         }
