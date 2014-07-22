@@ -32,9 +32,9 @@ task :travis do
       system "git config user.name '#{ENV['GIT_NAME']}'"
       system "git config user.email '#{ENV['GIT_EMAIL']}'"
 
-      system 'git add --all'
-      system "git commit -m 'Built from #{rev}'."
-      system "git push -q #{deploy_url} #{deploy_branch}"
+      #system 'git add --all'
+      #system "git commit -m 'Built from #{rev}'."
+      #system "git push -q #{deploy_url} #{deploy_branch}"
     end
   end
 end
