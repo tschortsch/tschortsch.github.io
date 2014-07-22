@@ -15,7 +15,7 @@ task :travis do
     next
   end
 
-  repo = %x(git config remote.origin.url).gsub(/^git:/, 'https:').strip
+  repo = %x(git config remote.origin.url).gsub(/^git:/, 'https:').gsub(/^git@github.com:/, 'https://').strip
   deploy_url = repo.gsub %r{https://}, "https://#{ENV['GH_TOKEN']}@"
   deploy_branch = repo.match(/github\.io\.git$/) ? 'master' : 'gh-pages'
   rev = %x(git rev-parse HEAD).strip
@@ -26,7 +26,7 @@ task :travis do
     system 'bundle exec rake build'
     fail "Build failed." unless Dir.exists? destination
     system "git clone --branch #{deploy_branch} #{repo} #{dir}"
-    #system %Q(rsync -rt --del --exclude=".git" --exclude=".nojekyll" #{destination} #{dir})
+    system %Q(rsync -rt --del --exclude=".git" --exclude=".nojekyll" #{destination} #{dir})
     Dir.chdir dir do
       # setup credentials so Travis CI can push to GitHub
       system "git config user.name '#{ENV['GIT_NAME']}'"
