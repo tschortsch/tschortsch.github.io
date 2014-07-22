@@ -18,7 +18,7 @@ task :travis do
   deploy_url = repo.gsub %r{https://}, "https://#{ENV['GH_TOKEN']}@"
   deploy_branch = repo.match(/github\.io\.git$/) ? 'master' : 'gh-pages'
   rev = %x(git rev-parse HEAD).strip
-  destination = .
+  destination = '.'
 
   Dir.mktmpdir do |dir|
     dir = File.join dir, 'site'
