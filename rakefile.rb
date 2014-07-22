@@ -1,3 +1,10 @@
+require "rake"
+
+desc "Builds the project"
+task :build do
+    puts "Building project!"
+end
+
 desc 'Generate deck from Travis CI and publish to GitHub Pages.'
 task :travis do
   # if this is a pull request, do a simple build of the site and stop
@@ -11,6 +18,7 @@ task :travis do
   deploy_url = repo.gsub %r{https://}, "https://#{ENV['GH_TOKEN']}@"
   deploy_branch = repo.match(/github\.io\.git$/) ? 'master' : 'gh-pages'
   rev = %x(git rev-parse HEAD).strip
+  destination = .
 
   Dir.mktmpdir do |dir|
     dir = File.join dir, 'site'
