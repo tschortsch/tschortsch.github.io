@@ -1,4 +1,5 @@
 require "rake"
+require "tmpdir"
 
 desc "Builds the project"
 task :build do
@@ -25,7 +26,7 @@ task :travis do
     system 'bundle exec rake build'
     fail "Build failed." unless Dir.exists? destination
     system "git clone --branch #{deploy_branch} #{repo} #{dir}"
-    system %Q(rsync -rt --del --exclude=".git" --exclude=".nojekyll" #{destination} #{dir})
+    #system %Q(rsync -rt --del --exclude=".git" --exclude=".nojekyll" #{destination} #{dir})
     Dir.chdir dir do
       # setup credentials so Travis CI can push to GitHub
       system "git config user.name '#{ENV['GIT_NAME']}'"
