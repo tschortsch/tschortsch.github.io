@@ -19,7 +19,6 @@ function getRule(ruleName) {
 
     for (i = 0; i < ss.length; ++i) {
         if(ss[i].href === document.URL + 'Resources/Styles/styles.css') {
-            console.log(ss[i]);
             if(ss[i].cssRules) {
                 // loop through all the rules
                 for (x = 0; x < ss[i].cssRules.length; ++x) {
@@ -42,7 +41,12 @@ function adjustBirdMoveAnimation(birdMoveRule) {
         distanceX = $('.target-position').offset().left - $('.social-buttons a.twitter').offset().left - targetPositionOffsetX;
         distanceY = $('.target-position').offset().top - $('.social-buttons a.twitter').offset().top - targetPositionOffsetY;
         birdMoveRule.deleteRule("100%");
-        birdMoveRule.insertRule("100% { -webkit-transform: scaleX(-1); -moz-transform: scaleX(-1); transform: scaleX(-1); top: " + distanceY + "px; left: " + distanceX + "px; }");
+        // Mozilla browser have appendRule function (see: https://developer.mozilla.org/en-US/docs/Web/API/CSSKeyframesRule)
+        if(jQuery.isFunction(birdMoveRule.appendRule)) {
+            birdMoveRule.appendRule("100% { -webkit-transform: scaleX(-1); -moz-transform: scaleX(-1); transform: scaleX(-1); top: " + distanceY + "px; left: " + distanceX + "px; }");
+        } else {
+            birdMoveRule.insertRule("100% { -webkit-transform: scaleX(-1); -moz-transform: scaleX(-1); transform: scaleX(-1); top: " + distanceY + "px; left: " + distanceX + "px; }");
+        }
     }
 };
 
