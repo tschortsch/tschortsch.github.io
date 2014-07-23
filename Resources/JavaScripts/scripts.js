@@ -103,10 +103,11 @@ function showFollowMeTooltip() {
     var topOffset = 5,
         leftOffset = -23,
         twitterBirdBoxElement = $('#twitter-bird-box'),
-        followMeTooltipElement = $('a.twitter div.tooltip'),
+        followMeTooltipElement,
         originalTop, originalLeft;
 
     twitterBirdBoxElement.tooltip('show');
+    followMeTooltipElement = $('a.twitter div.tooltip');
     originalTop = followMeTooltipElement.css("top").replace(/[^-\d\.]/g, '');
     originalLeft = followMeTooltipElement.css("left").replace(/[^-\d\.]/g, '');
     followMeTooltipElement.css("top", (parseInt(originalTop) + topOffset) + "px");
