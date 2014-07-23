@@ -13,24 +13,23 @@ $(document).ready(function() {
 });
 
 // Returns css rule by name
-function getRule(ruleName) {
+function getKeyframeRule(ruleName, styleSheetUrl) {
     var ss = document.styleSheets,
         rule, i, x;
 
     for (i = 0; i < ss.length; ++i) {
-        if(ss[i].href === document.URL + 'Resources/Styles/styles.css') {
-            if(ss[i].cssRules) {
-                // loop through all the rules
-                for (x = 0; x < ss[i].cssRules.length; ++x) {
-                    rule = ss[i].cssRules[x];
-                    if((rule.type === window.CSSRule.KEYFRAMES_RULE || rule.type === window.CSSRule.WEBKIT_KEYFRAMES_RULE || rule.type === window.CSSRule.MOZ_KEYFRAMES_RULE) && rule.name === ruleName) {
-                        return rule;
-                    }
+        if(ss[i].href === styleSheetUrl && ss[i].cssRules) {
+            // loop through all the rules
+            for (x = 0; x < ss[i].cssRules.length; ++x) {
+                rule = ss[i].cssRules[x];
+                if((rule.type === window.CSSRule.KEYFRAMES_RULE || rule.type === window.CSSRule.WEBKIT_KEYFRAMES_RULE || rule.type === window.CSSRule.MOZ_KEYFRAMES_RULE) && rule.name === ruleName) {
+                    return rule;
                 }
             }
         }
     }
-};
+    return null;
+}
 
 function getKeyframeIndex(keyframeRule, keyText) {
     var i;
@@ -42,62 +41,76 @@ function getKeyframeIndex(keyframeRule, keyText) {
     return -1;
 }
 function adjustBirdMoveAnimation(birdMoveRule) {
-    var targetPositionOffsetX, targetPositionOffsetY, distanceX, distanceY,
-        animationEndRule, animationEndRuleIndex;
+    var targetPositionElement = $('.target-position'),
+        startPositionElement = $('.social-buttons a.twitter'),
+        targetPositionOffsetX, targetPositionOffsetY, distanceX, distanceY,
+        animationEndRuleIndex;
 
-    if(birdMoveRule) {
-        targetPositionOffsetX = 18;
-        targetPositionOffsetY = 13;
-        distanceX = $('.target-position').offset().left - $('.social-buttons a.twitter').offset().left - targetPositionOffsetX;
-        distanceY = $('.target-position').offset().top - $('.social-buttons a.twitter').offset().top - targetPositionOffsetY;
-
-        // find keyframe index because IE only allows to deleteRule by index
-        animationEndRuleIndex = getKeyframeIndex(birdMoveRule, "100%");
-        if(animationEndRuleIndex === -1) {
-            return;
-        } else {
-            birdMoveRule.deleteRule(animationEndRuleIndex);
-            // Check if appendRule function is available (for Mozilla browsers) (see: https://developer.mozilla.org/en-US/docs/Web/API/CSSKeyframesRule)
-            if(jQuery.isFunction(birdMoveRule.appendRule)) {
-                birdMoveRule.appendRule("100% { -webkit-transform: scaleX(-1); -moz-transform: scaleX(-1); transform: scaleX(-1); top: " + distanceY + "px; left: " + distanceX + "px; }");
-            } else {
-                birdMoveRule.insertRule("100% { -webkit-transform: scaleX(-1); -moz-transform: scaleX(-1); transform: scaleX(-1); top: " + distanceY + "px; left: " + distanceX + "px; }");
-            }
-        }
+    if(!birdMoveRule) {
+        return;
     }
-};
+
+    targetPositionOffsetX = 18;
+    targetPositionOffsetY = 13;
+    distanceX = targetPositionElement.offset().left - startPositionElement.offset().left - targetPositionOffsetX;
+    distanceY = targetPositionElement.offset().top - startPositionElement.offset().top - targetPositionOffsetY;
+
+    // find keyframe index because IE only allows to deleteRule by index
+    animationEndRuleIndex = getKeyframeIndex(birdMoveRule, "100%");
+    if(animationEndRuleIndex === -1) {
+        return;
+    }
+
+    birdMoveRule.deleteRule(animationEndRuleIndex);
+    // Check if appendRule function is available (for Mozilla browsers) (see: https://developer.mozilla.org/en-US/docs/Web/API/CSSKeyframesRule)
+    if(jQuery.isFunction(birdMoveRule.appendRule)) {
+        birdMoveRule.appendRule("100% { -webkit-transform: scaleX(-1); -moz-transform: scaleX(-1); transform: scaleX(-1); top: " + distanceY + "px; left: " + distanceX + "px; }");
+    } else {
+        birdMoveRule.insertRule("100% { -webkit-transform: scaleX(-1); -moz-transform: scaleX(-1); transform: scaleX(-1); top: " + distanceY + "px; left: " + distanceX + "px; }");
+    }
+}
 
 function startBirdMoveAnimation() {
-    $('.fa-twitter').hide();
-    $('#twitter-bird-box').show();
-    $('#twitter-bird').show();
-    $('#twitter-bird').addClass('twitter-bird-fly');
-    $('#twitter-bird-box').addClass('twitter-bird-move');
+    var twitterBirdBoxElement = $('#twitter-bird-box'),
+        twitterBirdElement = $('#twitter-bird'),
+        twitterIconElement = $('.fa-twitter');
+
+    twitterIconElement.hide();
+    twitterBirdBoxElement.show();
+    twitterBirdElement.show();
+    twitterBirdElement.addClass('twitter-bird-fly');
+    twitterBirdBoxElement.addClass('twitter-bird-move');
 
     // show followme tooltip after bird move animation is done
-    $('#twitter-bird').one('webkitAnimationEnd oanimationend MSAnimationEnd animationend',
+    twitterBirdElement.one('webkitAnimationEnd oanimationend MSAnimationEnd animationend',
         showFollowMeTooltip
     );
-};
+}
 function stopBirdMoveAnimation() {
-    $('#twitter-bird').off();
+    var twitterBirdBoxElement = $('#twitter-bird-box'),
+        twitterBirdElement = $('#twitter-bird'),
+        twitterIconElement = $('.fa-twitter');
+
+    twitterBirdElement.off();
     hideFollowMeTooltip();
-    $('#twitter-bird-box').removeClass('twitter-bird-move');
-    $('#twitter-bird').removeClass('twitter-bird-fly');
-    $('#twitter-bird').hide();
-    $('#twitter-bird-box').hide();
-    $('.fa-twitter').show();
-};
+    twitterBirdBoxElement.removeClass('twitter-bird-move');
+    twitterBirdElement.removeClass('twitter-bird-fly');
+    twitterBirdElement.hide();
+    twitterBirdBoxElement.hide();
+    twitterIconElement.show();
+}
 function showFollowMeTooltip() {
     var topOffset = 5,
         leftOffset = -23,
+        twitterBirdBoxElement = $('#twitter-bird-box'),
+        followMeTooltipElement = $('a.twitter div.tooltip'),
         originalTop, originalLeft;
 
-    $('#twitter-bird-box').tooltip('show');
-    originalTop = $('a.twitter div.tooltip').css("top").replace(/[^-\d\.]/g, '');
-    originalLeft = $('a.twitter div.tooltip').css("left").replace(/[^-\d\.]/g, '');
-    $('a.twitter div.tooltip').css("top", (parseInt(originalTop) + topOffset) + "px");
-    $('a.twitter div.tooltip').css("left", (parseInt(originalLeft) + leftOffset) + "px");
+    twitterBirdBoxElement.tooltip('show');
+    originalTop = followMeTooltipElement.css("top").replace(/[^-\d\.]/g, '');
+    originalLeft = followMeTooltipElement.css("left").replace(/[^-\d\.]/g, '');
+    followMeTooltipElement.css("top", (parseInt(originalTop) + topOffset) + "px");
+    followMeTooltipElement.css("left", (parseInt(originalLeft) + leftOffset) + "px");
 }
 function hideFollowMeTooltip() {
     $('#twitter-bird-box').tooltip('hide');
@@ -112,7 +125,7 @@ function initBirdMoveAnimation() {
         idleTime = 10000,
         birdMoveAnimationTimer;
 
-    birdMoveRule = getRule("bird-move");
+    birdMoveRule = getKeyframeRule("bird-move", document.URL + "Resources/Styles/styles.css");
     adjustBirdMoveAnimation(birdMoveRule);
 
     birdMoveAnimationTimer = setTimeout(startBirdMoveAnimation, idleTime);
@@ -132,4 +145,4 @@ function initBirdMoveAnimation() {
         adjustBirdMoveAnimation(birdMoveRule);
         birdMoveAnimationTimer = setTimeout(startBirdMoveAnimation, idleTime);
     });
-};
+}
