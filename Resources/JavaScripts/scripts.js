@@ -32,20 +32,37 @@ function getRule(ruleName) {
     }
 };
 
+function getKeyframeIndex(keyframeRule, keyText) {
+    var i;
+    for(i = 0; i < keyframeRule.cssRules.length; ++i) {
+        if(keyframeRule.cssRules[i].keyText === keyText) {
+            return i;
+        }
+    }
+    return -1;
+}
 function adjustBirdMoveAnimation(birdMoveRule) {
-    var targetPositionOffsetX, targetPositionOffsetY, distanceX, distanceY;
+    var targetPositionOffsetX, targetPositionOffsetY, distanceX, distanceY,
+        animationEndRule, animationEndRuleIndex;
 
     if(birdMoveRule) {
         targetPositionOffsetX = 18;
         targetPositionOffsetY = 13;
         distanceX = $('.target-position').offset().left - $('.social-buttons a.twitter').offset().left - targetPositionOffsetX;
         distanceY = $('.target-position').offset().top - $('.social-buttons a.twitter').offset().top - targetPositionOffsetY;
-        birdMoveRule.deleteRule("100%");
-        // Mozilla browser have appendRule function (see: https://developer.mozilla.org/en-US/docs/Web/API/CSSKeyframesRule)
-        if(jQuery.isFunction(birdMoveRule.appendRule)) {
-            birdMoveRule.appendRule("100% { -webkit-transform: scaleX(-1); -moz-transform: scaleX(-1); transform: scaleX(-1); top: " + distanceY + "px; left: " + distanceX + "px; }");
+
+        // find keyframe index because IE only allows to deleteRule by index
+        animationEndRuleIndex = getKeyframeIndex(birdMoveRule, "100%");
+        if(animationEndRuleIndex === -1) {
+            return;
         } else {
-            birdMoveRule.insertRule("100% { -webkit-transform: scaleX(-1); -moz-transform: scaleX(-1); transform: scaleX(-1); top: " + distanceY + "px; left: " + distanceX + "px; }");
+            birdMoveRule.deleteRule(animationEndRuleIndex);
+            // Check if appendRule function is available (for Mozilla browsers) (see: https://developer.mozilla.org/en-US/docs/Web/API/CSSKeyframesRule)
+            if(jQuery.isFunction(birdMoveRule.appendRule)) {
+                birdMoveRule.appendRule("100% { -webkit-transform: scaleX(-1); -moz-transform: scaleX(-1); transform: scaleX(-1); top: " + distanceY + "px; left: " + distanceX + "px; }");
+            } else {
+                birdMoveRule.insertRule("100% { -webkit-transform: scaleX(-1); -moz-transform: scaleX(-1); transform: scaleX(-1); top: " + distanceY + "px; left: " + distanceX + "px; }");
+            }
         }
     }
 };
@@ -53,6 +70,7 @@ function adjustBirdMoveAnimation(birdMoveRule) {
 function startBirdMoveAnimation() {
     $('.fa-twitter').hide();
     $('#twitter-bird-box').show();
+    $('#twitter-bird').show();
     $('#twitter-bird').addClass('twitter-bird-fly');
     $('#twitter-bird-box').addClass('twitter-bird-move');
 
@@ -66,6 +84,7 @@ function stopBirdMoveAnimation() {
     hideFollowMeTooltip();
     $('#twitter-bird-box').removeClass('twitter-bird-move');
     $('#twitter-bird').removeClass('twitter-bird-fly');
+    $('#twitter-bird').hide();
     $('#twitter-bird-box').hide();
     $('.fa-twitter').show();
 };

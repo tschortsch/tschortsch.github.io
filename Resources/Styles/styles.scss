@@ -62,6 +62,9 @@ h1 {
                 }
             }
         }
+        i.fa {
+            line-height: 27px;
+        }
     }
 
     a:hover, a:active, a:focus {
@@ -93,6 +96,7 @@ h1 {
 }
 
 #twitter-bird {
+    display: none;
     background-image: url(../Images/twitter-bird-sprite.png);
     background-size: 120px 30px;
     height: 30px;
@@ -147,8 +151,8 @@ h1 {
         transform: scaleX(-1);
     }
     100% {
-        top: -315px;
-        left: 205px;
+        top: -316px;
+        left: 188px;
         -webkit-transform: scaleX(-1);
         -moz-transform: scaleX(-1);
         transform: scaleX(-1);

@@ -32,6 +32,8 @@ h1 {
       .social-buttons a.twitter div.tooltip .tooltip-arrow {
         border-top-color: #1bb2e9;
         left: 70% !important; }
+    .social-buttons a i.fa {
+      line-height: 27px; }
   .social-buttons a:hover, .social-buttons a:active, .social-buttons a:focus {
     color: #fff;
     border-color: transparent; }
@@ -52,6 +54,7 @@ h1 {
   height: 30px; }
 
 #twitter-bird {
+  display: none;
   background-image: url(../Images/twitter-bird-sprite.png);
   background-size: 120px 30px;
   height: 30px;
@@ -113,8 +116,8 @@ h1 {
     transform: scaleX(-1); }
 
   100% {
-    top: -315px;
-    left: 205px;
+    top: -316px;
+    left: 188px;
     -webkit-transform: scaleX(-1);
     -moz-transform: scaleX(-1);
     transform: scaleX(-1); } }
@@ -140,8 +143,8 @@ h1 {
     transform: scaleX(-1); }
 
   100% {
-    top: -315px;
-    left: 205px;
+    top: -316px;
+    left: 188px;
     -webkit-transform: scaleX(-1);
     -moz-transform: scaleX(-1);
     transform: scaleX(-1); } }
@@ -167,8 +170,8 @@ h1 {
     transform: scaleX(-1); }
 
   100% {
-    top: -315px;
-    left: 205px;
+    top: -316px;
+    left: 188px;
     -webkit-transform: scaleX(-1);
     -moz-transform: scaleX(-1);
     transform: scaleX(-1); } }
