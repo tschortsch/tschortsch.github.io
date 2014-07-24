@@ -105,26 +105,22 @@ h1 {
 
 .twitter-bird-fly {
     -webkit-animation: fly 0.2s steps(3) 28;
-    -moz-animation: fly 0.2s steps(3) 28;
     animation: fly 0.2s steps(3) 28;
 }
-@-webkit-keyframes fly {
+@mixin bird-fly-keyframes {
     0% { background-position: 0 0; }
     100% { background-position: -90px 0; }
 }
-@-moz-keyframes fly {
-    0% { background-position: 0 0; }
-    100% { background-position: -90px 0; }
+@-webkit-keyframes fly {
+    @include bird-fly-keyframes;
 }
 @keyframes fly {
-    0% { background-position: 0 0; }
-    100% { background-position: -90px 0; }
+    @include bird-fly-keyframes;
 }
 
 .twitter-bird-move {
     position: relative;
     -webkit-animation: bird-move 5s steps(100) 1 forwards;
-    -moz-animation: bird-move 5s steps(100) 1 forwards;
     animation: bird-move 5s steps(100) 1 forwards;
 }
 @mixin bird-move-keyframes {
@@ -132,33 +128,26 @@ h1 {
         top: 0px;
         left: 0px;
         -webkit-transform: scaleX(1);
-        -moz-transform: scaleX(1);
         transform: scaleX(1);
     }
     49% {
         -webkit-transform: scaleX(1);
-        -moz-transform: scaleX(1);
         transform: scaleX(1);
     }
     50% {
         top: -200px;
         left: 300px;
         -webkit-transform: scaleX(-1);
-        -moz-transform: scaleX(-1);
         transform: scaleX(-1);
     }
     100% {
         top: -316px;
         left: 188px;
         -webkit-transform: scaleX(-1);
-        -moz-transform: scaleX(-1);
         transform: scaleX(-1);
     }
 }
 @-webkit-keyframes bird-move {
-    @include bird-move-keyframes;
-}
-@-moz-keyframes bird-move {
     @include bird-move-keyframes;
 }
 @keyframes bird-move {

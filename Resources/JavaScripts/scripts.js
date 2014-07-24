@@ -22,7 +22,7 @@ function getKeyframeRule(ruleName, styleSheetUrl) {
             // loop through all the rules
             for (x = 0; x < ss[i].cssRules.length; ++x) {
                 rule = ss[i].cssRules[x];
-                if((rule.type === window.CSSRule.KEYFRAMES_RULE || rule.type === window.CSSRule.WEBKIT_KEYFRAMES_RULE || rule.type === window.CSSRule.MOZ_KEYFRAMES_RULE) && rule.name === ruleName) {
+                if((rule.type === window.CSSRule.KEYFRAMES_RULE || rule.type === window.CSSRule.WEBKIT_KEYFRAMES_RULE) && rule.name === ruleName) {
                     return rule;
                 }
             }
@@ -62,7 +62,7 @@ function adjustBirdMoveAnimation(birdMoveRule) {
     }
 
     birdMoveRule.deleteRule(animationEndRuleIndex);
-    newAnimationEndRule = "100% { -webkit-transform: scaleX(-1); -moz-transform: scaleX(-1); transform: scaleX(-1); top: " + distanceY + "px; left: " + distanceX + "px; }";
+    newAnimationEndRule = "100% { -webkit-transform: scaleX(-1); transform: scaleX(-1); top: " + distanceY + "px; left: " + distanceX + "px; }";
     // Check if appendRule function is available (for Mozilla browsers) (see: https://developer.mozilla.org/en-US/docs/Web/API/CSSKeyframesRule)
     if(jQuery.isFunction(birdMoveRule.appendRule)) {
         birdMoveRule.appendRule(newAnimationEndRule);
