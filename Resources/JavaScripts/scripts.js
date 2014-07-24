@@ -31,6 +31,14 @@ function getKeyframeRule(ruleName, styleSheetUrl) {
     return null;
 }
 
+function calculateDistanceX(elementA, elementB) {
+    var targetPositionOffsetX = 18;
+    return elementB.offset().left - elementA.offset().left - targetPositionOffsetX;
+}
+function calculateDistanceY(elementA, elementB) {
+    var targetPositionOffsetY = 13;
+    return elementB.offset().top - elementA.offset().top - targetPositionOffsetY;
+}
 function getKeyframeIndex(keyframeRule, keyText) {
     var i;
     for(i = 0; i < keyframeRule.cssRules.length; ++i) {
@@ -41,19 +49,13 @@ function getKeyframeIndex(keyframeRule, keyText) {
     return -1;
 }
 function adjustBirdMoveAnimation(birdMoveRule) {
-    var targetPositionElement = $('.target-position'),
-        startPositionElement = $('.social-buttons a.twitter'),
-        targetPositionOffsetX, targetPositionOffsetY, distanceX, distanceY,
+    var startPositionElement = $('.social-buttons a.twitter'),
+        targetPositionElement = $('.target-position'),
         animationEndRuleIndex, newAnimationEndRule;
 
     if(!birdMoveRule) {
         return;
     }
-
-    targetPositionOffsetX = 18;
-    targetPositionOffsetY = 13;
-    distanceX = targetPositionElement.offset().left - startPositionElement.offset().left - targetPositionOffsetX;
-    distanceY = targetPositionElement.offset().top - startPositionElement.offset().top - targetPositionOffsetY;
 
     // find keyframe index because IE only allows to deleteRule by index
     animationEndRuleIndex = getKeyframeIndex(birdMoveRule, "100%");
@@ -62,7 +64,7 @@ function adjustBirdMoveAnimation(birdMoveRule) {
     }
 
     birdMoveRule.deleteRule(animationEndRuleIndex);
-    newAnimationEndRule = "100% { -webkit-transform: scaleX(-1); transform: scaleX(-1); top: " + distanceY + "px; left: " + distanceX + "px; }";
+    newAnimationEndRule = "100% { -webkit-transform: scaleX(-1); transform: scaleX(-1); top: " + calculateDistanceY(startPositionElement, targetPositionElement) + "px; left: " + calculateDistanceX(startPositionElement, targetPositionElement) + "px; }";
     // Check if appendRule function is available (for Mozilla browsers) (see: https://developer.mozilla.org/en-US/docs/Web/API/CSSKeyframesRule)
     if(jQuery.isFunction(birdMoveRule.appendRule)) {
         birdMoveRule.appendRule(newAnimationEndRule);
