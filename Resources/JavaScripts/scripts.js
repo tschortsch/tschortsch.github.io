@@ -141,6 +141,11 @@ $(document).ready(function() {
             idleTime = 10000,
             birdMoveAnimationTimer;
 
+        if(document.all && !window.atob) {
+            console.log("Internet Explorer 9 and older doesn't support CSS3 animations. So stop trying!");
+            return;
+        }
+
         if(!birdMoveAnimationInitialized) {
             birdMoveRule = getKeyframeRule("bird-move", document.URL + "Resources/Styles/styles.css");
             adjustBirdMoveAnimation(birdMoveRule);
