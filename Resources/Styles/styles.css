@@ -28,9 +28,9 @@ h1 {
     .social-buttons a.twitter div.tooltip {
       font-family: "Indie Flower", "Helvetica Neue", Helvetica, Arial, cursive; }
       .social-buttons a.twitter div.tooltip .tooltip-inner {
-        background-color: #1bb2e9; }
+        background-color: #55acee; }
       .social-buttons a.twitter div.tooltip .tooltip-arrow {
-        border-top-color: #1bb2e9;
+        border-top-color: #55acee;
         left: 70% !important; }
     .social-buttons a i.fa {
       line-height: 27px; }
@@ -38,7 +38,7 @@ h1 {
     color: #fff;
     border-color: transparent; }
     .social-buttons a:hover.twitter, .social-buttons a:active.twitter, .social-buttons a:focus.twitter {
-      background-color: #1bb2e9; }
+      background-color: #55acee; }
     .social-buttons a:hover.facebook, .social-buttons a:active.facebook, .social-buttons a:focus.facebook {
       background-color: #3b5998; }
     .social-buttons a:hover.github, .social-buttons a:active.github, .social-buttons a:focus.github {
