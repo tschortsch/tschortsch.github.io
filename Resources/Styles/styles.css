@@ -40,13 +40,13 @@ h1 {
     .social-buttons a:hover.twitter, .social-buttons a:active.twitter, .social-buttons a:focus.twitter {
       background-color: #1bb2e9; }
     .social-buttons a:hover.facebook, .social-buttons a:active.facebook, .social-buttons a:focus.facebook {
-      background-color: #3c599f; }
+      background-color: #3b5998; }
     .social-buttons a:hover.github, .social-buttons a:active.github, .social-buttons a:focus.github {
-      background-color: #323031; }
+      background-color: #333333; }
     .social-buttons a:hover.xing, .social-buttons a:active.xing, .social-buttons a:focus.xing {
-      background-color: #005051; }
+      background-color: #026466; }
     .social-buttons a:hover.tumblr, .social-buttons a:active.tumblr, .social-buttons a:focus.tumblr {
-      background-color: #2c4762; }
+      background-color: #35465c; }
 
 #twitter-bird-box {
   display: none;

@@ -1,18 +1,21 @@
 $color-twitter: #1BB2E9;
-$color-facebook: #3C599F;
-$color-github: #323031;
-$color-xing: #005051;
-$color-tumblr: #2C4762;
+$color-facebook: #3B5998;
+$color-github: #333333;
+$color-xing: #026466;
+$color-tumblr: #35465c;
 $color-footer: #949494;
 $block-margin: 30px;
 $avatar-size: 170px;
+$font-family-base: "Indie Flower", "Helvetica Neue", Helvetica, Arial, cursive;
+$font-size-base: 18px;
+$font-size-footer: 14px;
 
 // Global
 body {
     padding-top: 40px;
     padding-bottom: 40px;
-    font-family: "Indie Flower", "Helvetica Neue", Helvetica, Arial, cursive;
-    font-size: 18px;
+    font-family: $font-family-base;
+    font-size: $font-size-base;
 
     // preloading images
     &:after {
@@ -51,7 +54,7 @@ h1 {
 
         &.twitter {
             div.tooltip {
-                font-family: "Indie Flower", "Helvetica Neue", Helvetica, Arial, cursive;
+                font-family: $font-family-base;
 
                 .tooltip-inner {
                     background-color: $color-twitter;
@@ -157,6 +160,6 @@ h1 {
 // Footer
 footer {
     color: $color-footer;
-    font-size: 14px;
+    font-size: $font-size-footer;
     margin-top: 10px;
 }
