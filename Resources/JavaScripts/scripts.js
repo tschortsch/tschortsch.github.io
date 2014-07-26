@@ -146,30 +146,31 @@ $(document).ready(function() {
             return;
         }
 
-        if(!birdMoveAnimationInitialized) {
-            birdMoveRule = getKeyframeRule("bird-move", document.URL + "Resources/Styles/styles.css");
-            adjustBirdMoveAnimation(birdMoveRule);
-
-            birdMoveAnimationTimer = setTimeout(startBirdMoveAnimation, idleTime);
-            $('body').bind('mousemove scroll touchmove mousedown keydown', function(event) {
-                birdMoveAnimationTimer = resetBirdMoveAnimationTimer(birdMoveAnimationTimer, idleTime);
-            });
-
-            $(window).resize(function() {
-                birdMoveAnimationTimer = resetBirdMoveAnimationTimer(birdMoveAnimationTimer, idleTime);
-                adjustBirdMoveAnimation(birdMoveRule);
-            });
-            $(window).blur(function() {
-                stopBirdMoveAnimation();
-                clearTimeout(birdMoveAnimationTimer);
-            });
-            $(window).focus(function() {
-                adjustBirdMoveAnimation(birdMoveRule);
-                birdMoveAnimationTimer = setTimeout(startBirdMoveAnimation, idleTime);
-            });
-            birdMoveAnimationInitialized = true;
-        } else {
+        if(birdMoveAnimationInitialized) {
             console.log("bird move animation already initialized!");
+            return;
         }
+
+        birdMoveRule = getKeyframeRule("bird-move", document.URL + "Resources/Styles/styles.css");
+        adjustBirdMoveAnimation(birdMoveRule);
+
+        birdMoveAnimationTimer = setTimeout(startBirdMoveAnimation, idleTime);
+        $('body').bind('mousemove scroll touchmove mousedown keydown', function(event) {
+            birdMoveAnimationTimer = resetBirdMoveAnimationTimer(birdMoveAnimationTimer, idleTime);
+        });
+
+        $(window).resize(function() {
+            birdMoveAnimationTimer = resetBirdMoveAnimationTimer(birdMoveAnimationTimer, idleTime);
+            adjustBirdMoveAnimation(birdMoveRule);
+        });
+        $(window).blur(function() {
+            stopBirdMoveAnimation();
+            clearTimeout(birdMoveAnimationTimer);
+        });
+        $(window).focus(function() {
+            adjustBirdMoveAnimation(birdMoveRule);
+            birdMoveAnimationTimer = setTimeout(startBirdMoveAnimation, idleTime);
+        });
+        birdMoveAnimationInitialized = true;
     };
 }(window.tschortsch = window.tschortsch || {}, jQuery));
