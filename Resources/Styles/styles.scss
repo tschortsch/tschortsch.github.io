@@ -31,6 +31,11 @@ h1 {
 // Avatar
 .avatar {
     width: $avatar-size;
+
+    &.inverse {
+        -webkit-transform: rotate(180deg);
+        transform: rotate(180deg);
+    }
 }
 
 // Facts

@@ -12,6 +12,9 @@ h1 {
 
 .avatar {
   width: 170px; }
+  .avatar.inverse {
+    -webkit-transform: rotate(180deg);
+    transform: rotate(180deg); }
 
 .facts {
   margin-top: 30px; }
