@@ -136,3 +136,7 @@ footer {
   color: #949494;
   font-size: 14px;
   margin-top: 10px; }
+
+@media print {
+  .social-buttons {
+    display: none; } }
