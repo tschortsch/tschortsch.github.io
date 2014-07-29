@@ -1,5 +1,11 @@
 @media print {
     .social-buttons {
-        display: none;
+        a {
+            display: block;
+
+            &.btn-default {
+                border: none;
+            }
+        }
     }
 }

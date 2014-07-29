@@ -138,5 +138,7 @@ footer {
   margin-top: 10px; }
 
 @media print {
-  .social-buttons {
-    display: none; } }
+  .social-buttons a {
+    display: block; }
+    .social-buttons a.btn-default {
+      border: none; } }
