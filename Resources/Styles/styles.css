@@ -139,6 +139,7 @@ footer {
 
 @media print {
   .social-buttons a {
-    display: block; }
+    display: block;
+    font-family: "Indie Flower", "Helvetica Neue", Helvetica, Arial, cursive; }
     .social-buttons a.btn-default {
       border: none; } }
