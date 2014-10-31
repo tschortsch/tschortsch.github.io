@@ -9,15 +9,23 @@ module.exports = function(grunt) {
                 globals: {
                 }
             }
+        },
+        bootlint: {
+            options: {
+                stoponerror: false,
+                relaxerror: []
+            },
+            files: ['*.html']
         }
     });
 
     // Load the plugins
     grunt.loadNpmTasks('grunt-contrib-jshint');
+    grunt.loadNpmTasks('grunt-bootlint');
 
     // Default task
-    grunt.registerTask('default', ['jshint']);
+    grunt.registerTask('default', ['jshint', 'bootlint']);
 
     // Travis task
-    grunt.registerTask('travis', ['jshint']);
+    grunt.registerTask('travis', ['jshint', 'bootlint']);
 };
