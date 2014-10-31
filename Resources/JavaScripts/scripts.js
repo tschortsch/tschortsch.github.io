@@ -5,6 +5,9 @@ $(document).ready(function() {
     // set current year in copyright
     $('#current-year').html(new Date().getFullYear());
 
+    // set current age
+    $('#current-age').html(tschortsch.calculateAge());
+
     // only initialize animation if browser supports it (every browser but IE9 or older) (http://tanalin.com/en/articles/ie-version-js/)
     if(!(document.all && !window.atob)) {
         // wait 5sec to complete rendering of page before initializing bird move animation
@@ -172,5 +175,18 @@ $(document).ready(function() {
             birdMoveAnimationTimer = setTimeout(startBirdMoveAnimation, idleTime);
         });
         birdMoveAnimationInitialized = true;
+    };
+
+    tschortsch.calculateAge = function() {
+        var birthDate = new Date(1985, 4, 2), // Attention: month parameter is 0-based!
+            today = new Date(),
+            age, m;
+
+        age = today.getFullYear() - birthDate.getFullYear();
+        m = today.getMonth() - birthDate.getMonth();
+        if (m < 0 || (m === 0 && today.getDate() < birthDate.getDate())) {
+            age--;
+        }
+        return age;
     };
 }(window.tschortsch = window.tschortsch || {}, jQuery));

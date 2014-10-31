@@ -10,6 +10,14 @@ body {
 h1 {
   font-weight: 600; }
 
+#top-border {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 160px;
+  background-color: #BECFDB; }
+
 .avatar {
   width: 170px; }
   .avatar.inverse {
@@ -43,11 +51,13 @@ h1 {
     .social-buttons a:hover.twitter, .social-buttons a:active.twitter, .social-buttons a:focus.twitter {
       background-color: #55acee; }
     .social-buttons a:hover.facebook, .social-buttons a:active.facebook, .social-buttons a:focus.facebook {
-      background-color: #3b5998; }
+      background-color: #3B5998; }
     .social-buttons a:hover.github, .social-buttons a:active.github, .social-buttons a:focus.github {
       background-color: #333333; }
     .social-buttons a:hover.xing, .social-buttons a:active.xing, .social-buttons a:focus.xing {
       background-color: #026466; }
+    .social-buttons a:hover.linkedin, .social-buttons a:active.linkedin, .social-buttons a:focus.linkedin {
+      background-color: #0077b5; }
     .social-buttons a:hover.tumblr, .social-buttons a:active.tumblr, .social-buttons a:focus.tumblr {
       background-color: #35465c; }
 
@@ -70,17 +80,13 @@ h1 {
 @-webkit-keyframes fly {
   0% {
     background-position: 0 0; }
-
   100% {
     background-position: -90px 0; } }
-
 @keyframes fly {
   0% {
     background-position: 0 0; }
-
   100% {
     background-position: -90px 0; } }
-
 .twitter-bird-move {
   position: relative;
   -webkit-animation: bird-move 5s steps(100) 1 forwards;
@@ -92,46 +98,38 @@ h1 {
     left: 0px;
     -webkit-transform: scaleX(1);
     transform: scaleX(1); }
-
   49% {
     -webkit-transform: scaleX(1);
     transform: scaleX(1); }
-
   50% {
     top: -200px;
     left: 300px;
     -webkit-transform: scaleX(-1);
     transform: scaleX(-1); }
-
   100% {
     top: -316px;
     left: 188px;
     -webkit-transform: scaleX(-1);
     transform: scaleX(-1); } }
-
 @keyframes bird-move {
   0% {
     top: 0px;
     left: 0px;
     -webkit-transform: scaleX(1);
     transform: scaleX(1); }
-
   49% {
     -webkit-transform: scaleX(1);
     transform: scaleX(1); }
-
   50% {
     top: -200px;
     left: 300px;
     -webkit-transform: scaleX(-1);
     transform: scaleX(-1); }
-
   100% {
     top: -316px;
     left: 188px;
     -webkit-transform: scaleX(-1);
     transform: scaleX(-1); } }
-
 footer {
   color: #949494;
   font-size: 14px;
@@ -143,3 +141,5 @@ footer {
     font-family: "Indie Flower", "Helvetica Neue", Helvetica, Arial, cursive; }
     .social-buttons a.btn-default {
       border: none; } }
+
+/*# sourceMappingURL=styles.css.map */
