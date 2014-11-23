@@ -9,7 +9,7 @@ $(document).ready(function() {
     $('#current-age').html(tschortsch.calculateAge());
 
     // only initialize animation if browser supports it (every browser but IE9 or older) (http://tanalin.com/en/articles/ie-version-js/)
-    if(!(document.all && !window.atob)) {
+    if (!(document.all && !window.atob)) {
         // wait 5sec to complete rendering of page before initializing bird move animation
         setTimeout(tschortsch.initBirdMoveAnimation, 5000);
     }
@@ -25,11 +25,11 @@ $(document).ready(function() {
             rule, i, x;
 
         for (i = 0; i < ss.length; ++i) {
-            if(ss[i].href === styleSheetUrl && ss[i].cssRules) {
+            if (ss[i].href === styleSheetUrl && ss[i].cssRules) {
                 // loop through all the rules
                 for (x = 0; x < ss[i].cssRules.length; ++x) {
                     rule = ss[i].cssRules[x];
-                    if((rule.type === window.CSSRule.KEYFRAMES_RULE || rule.type === window.CSSRule.WEBKIT_KEYFRAMES_RULE) && rule.name === ruleName) {
+                    if ((rule.type === window.CSSRule.KEYFRAMES_RULE || rule.type === window.CSSRule.WEBKIT_KEYFRAMES_RULE) && rule.name === ruleName) {
                         return rule;
                     }
                 }
@@ -50,8 +50,8 @@ $(document).ready(function() {
 
     function getKeyframeIndex(keyframeRule, keyText) {
         var i;
-        for(i = 0; i < keyframeRule.cssRules.length; ++i) {
-            if(keyframeRule.cssRules[i].keyText === keyText) {
+        for (i = 0; i < keyframeRule.cssRules.length; ++i) {
+            if (keyframeRule.cssRules[i].keyText === keyText) {
                 return i;
             }
         }
@@ -63,20 +63,20 @@ $(document).ready(function() {
             targetPositionElement = $('.target-position'),
             animationEndRuleIndex, newAnimationEndRule;
 
-        if(!birdMoveRule) {
+        if (!birdMoveRule) {
             return;
         }
 
         // find keyframe index because IE only allows to deleteRule by index
         animationEndRuleIndex = getKeyframeIndex(birdMoveRule, "100%");
-        if(animationEndRuleIndex === -1) {
+        if (animationEndRuleIndex === -1) {
             return;
         }
 
         birdMoveRule.deleteRule(animationEndRuleIndex);
         newAnimationEndRule = "100% { -webkit-transform: scaleX(-1); transform: scaleX(-1); top: " + calculateDistanceY(startPositionElement, targetPositionElement) + "px; left: " + calculateDistanceX(startPositionElement, targetPositionElement) + "px; }";
         // Check if appendRule function is available (for Mozilla browsers) (see: https://developer.mozilla.org/en-US/docs/Web/API/CSSKeyframesRule)
-        if($.isFunction(birdMoveRule.appendRule)) {
+        if ($.isFunction(birdMoveRule.appendRule)) {
             birdMoveRule.appendRule(newAnimationEndRule);
         } else {
             birdMoveRule.insertRule(newAnimationEndRule);
@@ -139,17 +139,17 @@ $(document).ready(function() {
         return setTimeout(startBirdMoveAnimation, idleTime);
     }
 
-    tschortsch.initBirdMoveAnimation = function () {
+    tschortsch.initBirdMoveAnimation = function() {
         var birdMoveRule,
             idleTime = 10000,
             birdMoveAnimationTimer;
 
-        if(document.all && !window.atob) {
+        if (document.all && !window.atob) {
             console.log("Internet Explorer 9 and older doesn't support CSS3 animations. So stop trying!");
             return;
         }
 
-        if(birdMoveAnimationInitialized) {
+        if (birdMoveAnimationInitialized) {
             console.log("bird move animation already initialized!");
             return;
         }
