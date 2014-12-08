@@ -31,18 +31,18 @@ h1 {
 
 .social-buttons {
   margin-top: 40px; }
+  .social-buttons div.tooltip {
+    font-family: "Indie Flower", "Helvetica Neue", Helvetica, Arial, cursive; }
   .social-buttons a {
     width: 40px;
     height: 40px;
     font-size: 18px;
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; }
-    .social-buttons a.twitter div.tooltip {
-      font-family: "Indie Flower", "Helvetica Neue", Helvetica, Arial, cursive; }
-      .social-buttons a.twitter div.tooltip .tooltip-inner {
-        background-color: #55acee; }
-      .social-buttons a.twitter div.tooltip .tooltip-arrow {
-        border-top-color: #55acee;
-        left: 70% !important; }
+    .social-buttons a.twitter div.tooltip .tooltip-inner {
+      background-color: #55acee; }
+    .social-buttons a.twitter div.tooltip .tooltip-arrow {
+      border-top-color: #55acee;
+      left: 70% !important; }
     .social-buttons a i.fa {
       line-height: 27px; }
   .social-buttons a:hover, .social-buttons a:active, .social-buttons a:focus {

@@ -63,6 +63,10 @@ h1 {
 .social-buttons {
     margin-top: $block-margin + 10px;
 
+    div.tooltip {
+        font-family: $font-family-base;
+    }
+
     a {
         width: 40px;
         height: 40px;
@@ -71,8 +75,6 @@ h1 {
 
         &.twitter {
             div.tooltip {
-                font-family: $font-family-base;
-
                 .tooltip-inner {
                     background-color: $color-twitter;
                 }
