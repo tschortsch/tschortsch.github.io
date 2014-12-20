@@ -19,6 +19,36 @@ $(document).ready(function() {
 (function(tschortsch, $) {
 
     var birdMoveAnimationInitialized = false;
+    // ----------------------------------------------------------
+    // If you're not in IE (or IE version is less than 5) then:
+    // ie === undefined
+    // If you're in IE (>=5) then you can determine which version:
+    // ie === 7; // IE7
+    // Thus, to detect IE:
+    // if (ie) {}
+    // And to detect the version:
+    // ie === 6 // IE6
+    // ie > 7 // IE8, IE9, IE10 ...
+    // ie < 9 // Anything less than IE9
+    // ----------------------------------------------------------
+    tschortsch.ie = (function(){
+        var undef,rv = -1, // Return value assumes failure.
+            ua = window.navigator.userAgent,
+            msie = ua.indexOf('MSIE '),
+            trident = ua.indexOf('Trident/'),
+            rvNum;
+
+        if (msie > 0) {
+            // IE 10 or older => return version number
+            rv = parseInt(ua.substring(msie + 5, ua.indexOf('.', msie)), 10);
+        } else if (trident > 0) {
+            // IE 11 (or newer) => return version number
+            rvNum = ua.indexOf('rv:');
+            rv = parseInt(ua.substring(rvNum + 3, ua.indexOf('.', rvNum)), 10);
+        }
+
+        return ((rv > -1) ? rv : undef);
+    }());
 
     function getKeyframeRule(ruleName, styleSheetUrl) {
         var ss = document.styleSheets,
@@ -48,16 +78,6 @@ $(document).ready(function() {
         return elementB.offset().top - elementA.offset().top - targetPositionOffsetY;
     }
 
-    function getKeyframeIndex(keyframeRule, keyText) {
-        var i;
-        for (i = 0; i < keyframeRule.cssRules.length; ++i) {
-            if (keyframeRule.cssRules[i].keyText === keyText) {
-                return i;
-            }
-        }
-        return -1;
-    }
-
     function adjustBirdMoveAnimation(birdMoveRule) {
         var startPositionElement = $('.social-buttons a.twitter'),
             targetPositionElement = $('.target-position'),
@@ -67,13 +87,13 @@ $(document).ready(function() {
             return;
         }
 
-        // find keyframe index because IE only allows to deleteRule by index
-        animationEndRuleIndex = getKeyframeIndex(birdMoveRule, "100%");
-        if (animationEndRuleIndex === -1) {
-            return;
+        // In IE the deleteRule function only accepts numbers from 0 to 1
+        if(tschortsch.ie) {
+            birdMoveRule.deleteRule(1);
+        } else {
+            birdMoveRule.deleteRule("100%");
         }
 
-        birdMoveRule.deleteRule(animationEndRuleIndex);
         newAnimationEndRule = "100% { -webkit-transform: scaleX(-1); transform: scaleX(-1); top: " + calculateDistanceY(startPositionElement, targetPositionElement) + "px; left: " + calculateDistanceX(startPositionElement, targetPositionElement) + "px; }";
         // Check if appendRule function is available (for Mozilla browsers) (see: https://developer.mozilla.org/en-US/docs/Web/API/CSSKeyframesRule)
         if ($.isFunction(birdMoveRule.appendRule)) {
