@@ -178,7 +178,7 @@ $(document).ready(function() {
         adjustBirdMoveAnimation(birdMoveRule);
 
         birdMoveAnimationTimer = setTimeout(startBirdMoveAnimation, idleTime);
-        $('body').bind('mousemove scroll touchmove mousedown keydown', function(event) {
+        $('body').bind('mousemove scroll touchmove touchstart mousedown keydown', function(event) {
             birdMoveAnimationTimer = resetBirdMoveAnimationTimer(birdMoveAnimationTimer, idleTime);
         });
 
