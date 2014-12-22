@@ -19,23 +19,23 @@ h1 {
     font-weight: 600;
 }
 
-#top-border {
+@mixin header {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: $top-border-height;
+}
+#single-color-header {
+    @include header;
     background-color: $color-brand-primary-light;
     @include box-shadow(0, -20px, 20px, -20px, darken($color-brand-primary-light, 15%), true);
 }
 .leaflet-container {
     cursor: default;
 }
-#map {
-    position: absolute;
-    top: 0;
-    width: 100%;
-    height: $top-border-height;
+#map-header {
+    @include header;
     opacity: 0;
     transition: opacity $fade-transition;
 

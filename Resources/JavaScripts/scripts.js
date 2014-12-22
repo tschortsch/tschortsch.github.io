@@ -202,7 +202,7 @@ $(document).ready(function() {
 
     tschortsch.initMap = function() {
         L.mapbox.accessToken = 'pk.eyJ1IjoidHNjaG9ydHNjaCIsImEiOiJHNEpQRkVrIn0.Wu8qta3IgW9odBpCN2SH_w';
-        var map = L.mapbox.map('map', 'tschortsch.khppi9c9', {
+        var map = L.mapbox.map('map-header', 'tschortsch.khppi9c9', {
             zoomControl: false,
             attributionControl: false
         });
@@ -218,13 +218,13 @@ $(document).ready(function() {
         $('ul.facts > li').hover(
             function() {
                 if($(this).hasClass('map')) {
-                    $('#map').addClass('fade-in');
+                    $('#map-header').addClass('fade-in');
                 }
                 $(this).closest('ul').find('li').not($(this)).addClass('grey-out');
             },
             function() {
                 if($(this).hasClass('map')) {
-                    $('#map').removeClass('fade-in');
+                    $('#map-header').removeClass('fade-in');
                 }
                 $(this).closest('ul').find('li').not($(this)).removeClass('grey-out');
             }
