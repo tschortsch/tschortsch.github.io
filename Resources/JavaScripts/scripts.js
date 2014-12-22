@@ -8,6 +8,9 @@ $(document).ready(function() {
     // set current age
     $('#current-age').html(tschortsch.calculateAge());
 
+    // initialize map
+    tschortsch.initMap();
+
     // only initialize animation if browser supports it (every browser but IE9 or older) (http://tanalin.com/en/articles/ie-version-js/)
     if (!(document.all && !window.atob)) {
         // wait 5sec to complete rendering of page before initializing bird move animation
@@ -195,6 +198,37 @@ $(document).ready(function() {
             birdMoveAnimationTimer = setTimeout(startBirdMoveAnimation, idleTime);
         });
         birdMoveAnimationInitialized = true;
+    };
+
+    tschortsch.initMap = function() {
+        L.mapbox.accessToken = 'pk.eyJ1IjoidHNjaG9ydHNjaCIsImEiOiJHNEpQRkVrIn0.Wu8qta3IgW9odBpCN2SH_w';
+        var map = L.mapbox.map('map', 'tschortsch.khppi9c9', {
+            zoomControl: false,
+            attributionControl: false
+        });
+        // Disable drag and zoom handlers.
+        map.dragging.disable();
+        map.touchZoom.disable();
+        map.doubleClickZoom.disable();
+        map.scrollWheelZoom.disable();
+
+        // Disable tap handler, if present.
+        if (map.tap) map.tap.disable();
+
+        $('ul.facts > li').hover(
+            function() {
+                if($(this).hasClass('map')) {
+                    $('#map').addClass('fadeIn');
+                }
+                $(this).closest('ul').find('li').not($(this)).css("opacity", "0.5");
+            }, function() {
+              if($(this).hasClass('map')) {
+                  $('#map').removeClass('fadeIn');
+              }
+                $(this).closest('ul').find('li').not($(this)).css("opacity", "1");
+                $(this).css('font-size', '18px');
+            }
+        );
     };
 
     tschortsch.calculateAge = function() {

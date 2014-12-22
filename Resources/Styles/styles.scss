@@ -21,12 +21,59 @@ h1 {
 
 #top-border {
     position: absolute;
-    top: 0px;
-    left: 0px;
+    top: 0;
+    left: 0;
     width: 100%;
-    height: 160px;
+    height: $top-border-height;
     background-color: $color-brand-primary-light;
     @include box-shadow(0, -20px, 20px, -20px, darken($color-brand-primary-light, 15%), true);
+}
+.leaflet-container {
+    cursor: default;
+}
+#map {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: $top-border-height;
+    opacity: 0;
+    transition: opacity $fade-transition;
+
+    &.fadeIn {
+        opacity: 0.7;
+    }
+}
+
+@-webkit-keyframes shake {
+    @include shake(30);
+}
+@keyframes shake {
+    @include shake(30);
+}
+@-webkit-keyframes spin {
+    to {
+        -webkit-transform:rotateZ(720deg);
+        transform:rotateZ(720deg);
+    }
+}
+@keyframes spin {
+    to {
+        -webkit-transform:rotateZ(720deg);
+        transform:rotateZ(720deg);
+    }
+}
+
+.map:hover > i {
+    -webkit-animation: spin 1200ms;
+    animation: spin 1200ms;
+}
+.age:hover > i,
+.work:hover > i,
+.graduation:hover > i,
+.kort:hover > i,
+.hobbies:hover > i {
+    -webkit-animation: shake 1200ms;
+    animation: shake 1200ms;
 }
 
 // Avatar
@@ -45,6 +92,8 @@ h1 {
 
     >li {
         margin-bottom: 3px;
+        opacity: 1;
+        transition: opacity $fade-transition, font-size $fade-transition;
     }
 }
 
