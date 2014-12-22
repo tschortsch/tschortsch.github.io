@@ -39,7 +39,7 @@ h1 {
     opacity: 0;
     transition: opacity $fade-transition;
 
-    &.fadeIn {
+    &.fade-in {
         opacity: 0.7;
     }
 }
@@ -63,19 +63,6 @@ h1 {
     }
 }
 
-.map:hover > i {
-    -webkit-animation: spin 1200ms;
-    animation: spin 1200ms;
-}
-.age:hover > i,
-.work:hover > i,
-.graduation:hover > i,
-.kort:hover > i,
-.hobbies:hover > i {
-    -webkit-animation: shake 1200ms;
-    animation: shake 1200ms;
-}
-
 // Avatar
 .avatar {
     width: $avatar-size;
@@ -94,6 +81,22 @@ h1 {
         margin-bottom: 3px;
         opacity: 1;
         transition: opacity $fade-transition, font-size $fade-transition;
+
+        &.grey-out {
+            opacity: 0.5;
+        }
+        &.map:hover > i {
+            -webkit-animation: spin 1200ms;
+            animation: spin 1200ms;
+        }
+        &.age:hover > i,
+        &.work:hover > i,
+        &.graduation:hover > i,
+        &.kort:hover > i,
+        &.hobbies:hover > i {
+            -webkit-animation: shake 1200ms;
+            animation: shake 1200ms;
+        }
     }
 }
 

@@ -218,15 +218,15 @@ $(document).ready(function() {
         $('ul.facts > li').hover(
             function() {
                 if($(this).hasClass('map')) {
-                    $('#map').addClass('fadeIn');
+                    $('#map').addClass('fade-in');
                 }
-                $(this).closest('ul').find('li').not($(this)).css("opacity", "0.5");
-            }, function() {
-              if($(this).hasClass('map')) {
-                  $('#map').removeClass('fadeIn');
-              }
-                $(this).closest('ul').find('li').not($(this)).css("opacity", "1");
-                $(this).css('font-size', '18px');
+                $(this).closest('ul').find('li').not($(this)).addClass('grey-out');
+            },
+            function() {
+                if($(this).hasClass('map')) {
+                    $('#map').removeClass('fade-in');
+                }
+                $(this).closest('ul').find('li').not($(this)).removeClass('grey-out');
             }
         );
     };

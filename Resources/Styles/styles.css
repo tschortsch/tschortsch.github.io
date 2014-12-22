@@ -31,7 +31,7 @@ h1 {
   height: 160px;
   opacity: 0;
   transition: opacity 0.5s ease-in-out; }
-  #map.fadeIn {
+  #map.fade-in {
     opacity: 0.7; }
 
 @-webkit-keyframes shake {
@@ -110,18 +110,6 @@ h1 {
   to {
     -webkit-transform: rotateZ(720deg);
     transform: rotateZ(720deg); } }
-.map:hover > i {
-  -webkit-animation: spin 1200ms;
-  animation: spin 1200ms; }
-
-.age:hover > i,
-.work:hover > i,
-.graduation:hover > i,
-.kort:hover > i,
-.hobbies:hover > i {
-  -webkit-animation: shake 1200ms;
-  animation: shake 1200ms; }
-
 .avatar {
   width: 170px; }
   .avatar.inverse {
@@ -134,6 +122,14 @@ h1 {
     margin-bottom: 3px;
     opacity: 1;
     transition: opacity 0.5s ease-in-out, font-size 0.5s ease-in-out; }
+    .facts > li.grey-out {
+      opacity: 0.5; }
+    .facts > li.map:hover > i {
+      -webkit-animation: spin 1200ms;
+      animation: spin 1200ms; }
+    .facts > li.age:hover > i, .facts > li.work:hover > i, .facts > li.graduation:hover > i, .facts > li.kort:hover > i, .facts > li.hobbies:hover > i {
+      -webkit-animation: shake 1200ms;
+      animation: shake 1200ms; }
 
 .social-buttons {
   margin-top: 40px; }
