@@ -28,8 +28,13 @@ h1 {
 }
 #single-color-header {
     @include header;
-    background-color: $color-brand-primary-light;
-    @include box-shadow(0, -20px, 20px, -20px, darken($color-brand-primary-light, 15%), true);
+    background-color: $color-header;
+    @include box-shadow(0, -20px, 20px, -20px, darken($color-header, 15%), true);
+
+    &.error {
+        background-color: $color-header-error;
+        @include box-shadow(0, -20px, 20px, -20px, darken($color-header-error, 15%), true);
+    }
 }
 .leaflet-container {
     cursor: default;
@@ -98,6 +103,11 @@ h1 {
             animation: shake 1200ms;
         }
     }
+}
+
+a:hover > i.fa-life-ring {
+    -webkit-animation: spin 1200ms;
+    animation: spin 1200ms;
 }
 
 // Social buttons

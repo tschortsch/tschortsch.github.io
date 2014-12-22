@@ -20,6 +20,11 @@ h1 {
   -webkit-box-shadow: inset 0 -20px 20px -20px #8dabc0;
   -moz-box-shadow: inset 0 -20px 20px -20px #8dabc0;
   box-shadow: inset 0 -20px 20px -20px #8dabc0; }
+  #single-color-header.error {
+    background-color: #E29C4D;
+    -webkit-box-shadow: inset 0 -20px 20px -20px #c37620;
+    -moz-box-shadow: inset 0 -20px 20px -20px #c37620;
+    box-shadow: inset 0 -20px 20px -20px #c37620; }
 
 .leaflet-container {
   cursor: default; }
@@ -131,6 +136,10 @@ h1 {
     .facts > li.age:hover > i, .facts > li.work:hover > i, .facts > li.graduation:hover > i, .facts > li.kort:hover > i, .facts > li.hobbies:hover > i {
       -webkit-animation: shake 1200ms;
       animation: shake 1200ms; }
+
+a:hover > i.fa-life-ring {
+  -webkit-animation: spin 1200ms;
+  animation: spin 1200ms; }
 
 .social-buttons {
   margin-top: 40px; }
