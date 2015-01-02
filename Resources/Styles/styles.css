@@ -39,15 +39,30 @@ h1 {
   .social-buttons a {
     width: 40px;
     height: 40px;
+    border-radius: 50%;
+    border-color: transparent;
     font-size: 18px;
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; }
-    .social-buttons a.twitter div.tooltip .tooltip-inner {
-      background-color: #55acee; }
-    .social-buttons a.twitter div.tooltip .tooltip-arrow {
-      border-top-color: #55acee;
-      left: 70% !important; }
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    color: #fff; }
     .social-buttons a i.fa {
       line-height: 27px; }
+    .social-buttons a.twitter {
+      background-color: #9bcef5; }
+      .social-buttons a.twitter div.tooltip .tooltip-inner {
+        background-color: #55acee; }
+      .social-buttons a.twitter div.tooltip .tooltip-arrow {
+        border-top-color: #55acee;
+        left: 70% !important; }
+    .social-buttons a.facebook {
+      background-color: #96abd6; }
+    .social-buttons a.github {
+      background-color: gray; }
+    .social-buttons a.xing {
+      background-color: #03aeb1; }
+    .social-buttons a.linkedin {
+      background-color: #82d4ff; }
+    .social-buttons a.tumblr {
+      background-color: #7891b2; }
   .social-buttons a:hover, .social-buttons a:active, .social-buttons a:focus {
     color: #fff;
     border-color: transparent; }
