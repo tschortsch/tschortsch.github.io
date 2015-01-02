@@ -9,3 +9,22 @@
         box-shadow: $top $left $blur $spread $color;
     }
 }
+
+@mixin pulse ($n) {
+    0%{
+        -webkit-transform: scaleX(1) scaleY(1);
+        transform: scaleX(1) scaleY(1);
+    }
+    @for $i from 1 through 4 {
+        $m:1;
+        @if $i % 2 !=0 {$m: $n;}
+        #{$i * 10%} {
+            -webkit-transform: scaleX($m) scaleY($m);
+            transform: scaleX($m) scaleY($m);
+        }
+    }
+    100%{
+        -webkit-transform: scaleX(1) scaleY(1);
+        transform: scaleX(1) scaleY(1);
+    }
+}

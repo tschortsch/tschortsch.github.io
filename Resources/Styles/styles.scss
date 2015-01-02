@@ -3,8 +3,8 @@
 
 // Global
 body {
-    padding-top: 40px;
-    padding-bottom: 40px;
+    padding-top: 50px;
+    padding-bottom: 50px;
     font-family: $font-family-base;
     font-size: $font-size-base;
     font-weight: 300;
@@ -71,6 +71,13 @@ h1 {
 }
 
 // Social buttons
+@-webkit-keyframes pulse {
+    @include pulse(0.85);
+}
+@keyframes pulse {
+    @include pulse(0.85);
+}
+
 .social-buttons {
     margin-top: 15px;
 
@@ -123,6 +130,8 @@ h1 {
     a:hover, a:active, a:focus {
         color: #fff;
         border-color: transparent;
+        -webkit-animation: pulse 1000ms;
+        animation: pulse 1000ms;
     }
 }
 

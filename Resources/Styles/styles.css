@@ -1,6 +1,6 @@
 body {
-  padding-top: 40px;
-  padding-bottom: 40px;
+  padding-top: 50px;
+  padding-bottom: 50px;
   font-family: "Source Sans Pro", sans-serif;
   font-size: 16px;
   font-weight: 300;
@@ -49,6 +49,44 @@ h1 {
     .facts > li i {
       color: #898989; }
 
+@-webkit-keyframes pulse {
+  0% {
+    -webkit-transform: scaleX(1) scaleY(1);
+    transform: scaleX(1) scaleY(1); }
+  10% {
+    -webkit-transform: scaleX(0.85) scaleY(0.85);
+    transform: scaleX(0.85) scaleY(0.85); }
+  20% {
+    -webkit-transform: scaleX(1) scaleY(1);
+    transform: scaleX(1) scaleY(1); }
+  30% {
+    -webkit-transform: scaleX(0.85) scaleY(0.85);
+    transform: scaleX(0.85) scaleY(0.85); }
+  40% {
+    -webkit-transform: scaleX(1) scaleY(1);
+    transform: scaleX(1) scaleY(1); }
+  100% {
+    -webkit-transform: scaleX(1) scaleY(1);
+    transform: scaleX(1) scaleY(1); } }
+@keyframes pulse {
+  0% {
+    -webkit-transform: scaleX(1) scaleY(1);
+    transform: scaleX(1) scaleY(1); }
+  10% {
+    -webkit-transform: scaleX(0.85) scaleY(0.85);
+    transform: scaleX(0.85) scaleY(0.85); }
+  20% {
+    -webkit-transform: scaleX(1) scaleY(1);
+    transform: scaleX(1) scaleY(1); }
+  30% {
+    -webkit-transform: scaleX(0.85) scaleY(0.85);
+    transform: scaleX(0.85) scaleY(0.85); }
+  40% {
+    -webkit-transform: scaleX(1) scaleY(1);
+    transform: scaleX(1) scaleY(1); }
+  100% {
+    -webkit-transform: scaleX(1) scaleY(1);
+    transform: scaleX(1) scaleY(1); } }
 .social-buttons {
   margin-top: 15px; }
   .social-buttons div.tooltip {
@@ -83,7 +121,9 @@ h1 {
       background-color: #35465c; }
   .social-buttons a:hover, .social-buttons a:active, .social-buttons a:focus {
     color: #fff;
-    border-color: transparent; }
+    border-color: transparent;
+    -webkit-animation: pulse 1000ms;
+    animation: pulse 1000ms; }
 
 #twitter-bird-box {
   display: none;
