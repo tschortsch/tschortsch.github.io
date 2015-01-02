@@ -1,6 +1,6 @@
 $(document).ready(function() {
     // initialize tooltip plugin
-    $('.social-buttons a').tooltip();
+    $('.twitter-bird-box').tooltip();
 
     // set current year in copyright
     $('#current-year').html(new Date().getFullYear());

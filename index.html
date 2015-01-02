@@ -28,7 +28,7 @@
     <!-- Font Awesome -->
     <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
     <!-- Google Font -->
-    <link href="//fonts.googleapis.com/css?family=Indie+Flower" rel="stylesheet" type="text/css">
+    <link href='//fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,700italic' rel='stylesheet' type='text/css'>
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -41,54 +41,58 @@
     <link rel="stylesheet" href="./Resources/Styles/styles.css">
 </head>
 <body>
-<div id="top-border"></div>
-<div class="container-fluid">
+<div class="container">
     <div class="row">
-        <div class="col-sm-6 col-sm-offset-3 text-center">
+        <div class="col-sm-4 col-md-3 col-md-offset-1 col-lg-2 col-lg-offset-2 text-center">
             <!-- avatar -->
             <div>
                 <img src="//www.gravatar.com/avatar/41c42656cf67fce9e98e1053b3c0c889?s=340" class="avatar img-circle">
-                <h1>Jürg Hunzike<span class="target-position">r</span></h1>
+            </div>
+        </div>
+        <div class="col-sm-8 col-md-7 col-lg-6">
+            <h1 class="name">Jürg Hunzike<span class="target-position">r</span></h1>
+
+            <!-- social buttons -->
+            <div class="social-buttons">
+                <a href="https://twitter.com/tschortsch85" target="_blank" class="btn btn-default twitter" role="button" title="Twitter">
+                    <div id="twitter-bird-box" data-toggle="tooltip" data-placement="top" data-trigger="manual" title="Follow me!">
+                        <div id="twitter-bird"></div>
+                    </div>
+                    <i class="fa fa-twitter"></i>
+                </a>
+                <a href="https://github.com/tschortsch" target="_blank" class="btn btn-default github" role="button" role="button" title="GitHub">
+                    <i class="fa fa-github"></i>
+                </a>
+                <a href="https://www.facebook.com/juerg.hunziker" target="_blank" class="btn btn-default facebook" role="button" role="button" title="Facebook">
+                    <i class="fa fa-facebook"></i>
+                </a>
+                <a href="http://blog.juerghunziker.ch" target="_blank" class="btn btn-default tumblr" role="button" role="button" title="Blog">
+                    <i class="fa fa-tumblr"></i>
+                </a>
+                <a href="https://www.xing.com/profile/Juerg_Hunziker" target="_blank" class="btn btn-default xing" role="button" role="button" title="Xing">
+                    <i class="fa fa-xing"></i>
+                </a>
+                <a href="https://ch.linkedin.com/in/juerghunziker" target="_blank" class="btn btn-default linkedin" role="button" role="button" title="LinkedIn">
+                    <i class="fa fa-linkedin"></i>
+                </a>
             </div>
 
             <!-- facts -->
             <ul class="fa-ul text-left facts">
                 <li><i class="fa-li fa fa-map-marker"></i>Winterthur, Switzerland</li>
                 <li><i class="fa-li fa fa-birthday-cake"></i><span id="current-age">29</span> years old</li>
-                <li><i class="fa-li fa fa-building-o"></i>Webdeveloper @<a href="http://stadt.winterthur.ch" target="_blank">City of Winterthur</a> till February 2015 -> <a href="https://www.xing.com/profile/Juerg_Hunziker" target="_blank"><strong><i class="fa fa-bullhorn"></i> Hire me!</strong></a> </li>
+                <li><i class="fa-li fa fa-building-o"></i>Webdeveloper @<a href="http://stadt.winterthur.ch" target="_blank">City of Winterthur</a> till February 2015 -> <strong><i class="fa fa-bullhorn"></i> <a href="https://www.xing.com/profile/Juerg_Hunziker" target="_blank">Hire me!</a></strong> </li>
                 <li><i class="fa-li fa fa-graduation-cap"></i>Bachelor of Science in Information Technology<br />HSR Hochschule für Technik Rapperswil</li>
                 <li><i class="fa-li fa fa-gamepad"></i>Creator of <a href="http://www.kort.ch" target="_blank">Kort Game</a></li>
                 <li><i class="fa-li fa fa-home"></i>Developing the web, logging the web, loving the web... and sometimes I even go outside.</li>
             </ul>
-
-            <!-- social buttons -->
-            <div class="social-buttons">
-                <a href="https://twitter.com/tschortsch85" target="_blank" class="btn btn-default twitter" role="button" data-toggle="tooltip" data-placement="top" title="Twitter">
-                    <div id="twitter-bird-box" data-toggle="tooltip" data-placement="top" data-trigger="manual" title="Follow me!">
-                        <div id="twitter-bird"></div>
-                    </div>
-                    <i class="fa fa-twitter"></i>
-                </a>
-                <a href="https://github.com/tschortsch" target="_blank" class="btn btn-default github" role="button" role="button" data-toggle="tooltip" data-placement="top" title="GitHub">
-                    <i class="fa fa-github"></i>
-                </a>
-                <a href="https://www.facebook.com/juerg.hunziker" target="_blank" class="btn btn-default facebook" role="button" role="button" data-toggle="tooltip" data-placement="top" title="Facebook">
-                    <i class="fa fa-facebook"></i>
-                </a>
-                <a href="http://blog.juerghunziker.ch" target="_blank" class="btn btn-default tumblr" role="button" role="button" data-toggle="tooltip" data-placement="top" title="Blog">
-                    <i class="fa fa-tumblr"></i>
-                </a>
-                <a href="https://www.xing.com/profile/Juerg_Hunziker" target="_blank" class="btn btn-default xing" role="button" role="button" data-toggle="tooltip" data-placement="top" title="Xing">
-                    <i class="fa fa-xing"></i>
-                </a>
-                <a href="https://ch.linkedin.com/in/juerghunziker" target="_blank" class="btn btn-default linkedin" role="button" role="button" data-toggle="tooltip" data-placement="top" title="LinkedIn">
-                    <i class="fa fa-linkedin"></i>
-                </a>
-            </div>
-
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-12 col-md-10 col-md-offset-1 col-lg-8 col-lg-offset-2 text-center">
             <!-- footer -->
             <footer>
-                &copy; <span id="current-year">2014</span> Jürg Hunziker
+                &copy; <span id="current-year">2014</span> Design & Content by Jürg Hunziker
             </footer>
         </div>
     </div>
