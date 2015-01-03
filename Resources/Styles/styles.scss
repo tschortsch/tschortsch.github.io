@@ -21,7 +21,7 @@ strong {
 }
 
 h1 {
-    margin-top: 0;
+    margin-top: $block-margin;
     color: $color-header;
     font-weight: $font-weight-strong;
     font-size: $font-size-h1;
@@ -187,14 +187,14 @@ footer {
     padding-top: $block-margin;
 }
 
-// center elements on small screens
-@media screen and (max-width: 767px) {
+// center elements on big screens
+@media screen and (min-width: 768px) {
     .name,
     .social-buttons {
-        text-align: center;
+        text-align: left;
     }
     .name {
-        margin-top: $block-margin;
+        margin-top: 0;
     }
 }
 
