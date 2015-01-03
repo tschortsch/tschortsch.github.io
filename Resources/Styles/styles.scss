@@ -53,7 +53,7 @@ h1 {
         opacity: 1;
         transition: opacity $fade-transition;
 
-        i {
+        i.fa-li {
             color: lighten($color-base, 25%);
         }
 
@@ -63,6 +63,12 @@ h1 {
         &:hover > i.fa-li {
             -webkit-animation: shake 1000ms;
             animation: shake 1000ms;
+        }
+        a.hireme {
+            transition: font-size .2s ease-in-out;
+        }
+        a:hover.hireme {
+            font-size: 1.2em;
         }
     }
 }

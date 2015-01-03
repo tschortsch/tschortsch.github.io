@@ -98,13 +98,17 @@ h1 {
     margin-bottom: 3px;
     opacity: 1;
     transition: opacity 0.5s ease-in-out; }
-    .facts > li i {
+    .facts > li i.fa-li {
       color: #737373; }
     .facts > li.grey-out {
       opacity: 0.5; }
     .facts > li:hover > i.fa-li {
       -webkit-animation: shake 1000ms;
       animation: shake 1000ms; }
+    .facts > li a.hireme {
+      transition: font-size .2s ease-in-out; }
+    .facts > li a:hover.hireme {
+      font-size: 1.2em; }
 
 @-webkit-keyframes pulse {
   0% {
