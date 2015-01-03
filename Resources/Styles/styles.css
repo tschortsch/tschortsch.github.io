@@ -226,7 +226,7 @@ h1 {
     transform: scaleX(1); }
   60% {
     top: -35px;
-    left: 250px;
+    left: 225px;
     -webkit-transform: scaleX(-1);
     transform: scaleX(-1); }
   100% {
@@ -245,7 +245,7 @@ h1 {
     transform: scaleX(1); }
   60% {
     top: -35px;
-    left: 250px;
+    left: 225px;
     -webkit-transform: scaleX(-1);
     transform: scaleX(-1); }
   100% {
