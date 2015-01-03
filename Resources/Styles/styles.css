@@ -274,8 +274,6 @@ footer {
 @media print {
   .social-buttons a {
     display: block;
-    font-family: "Source Sans Pro", sans-serif; }
-    .social-buttons a.btn-default {
-      border: none; } }
+    font-family: "Source Sans Pro", sans-serif; } }
 
 /*# sourceMappingURL=styles.css.map */
