@@ -128,8 +128,8 @@ h1 {
     width: 30px;
 }
 .twitter-bird-fly {
-    -webkit-animation: fly 0.2s steps(3) 28;
-    animation: fly 0.2s steps(3) 28;
+    -webkit-animation: fly 0.2s steps(3) 18;
+    animation: fly 0.2s steps(3) 18;
 }
 @mixin bird-fly-keyframes {
     0% { background-position: 0 0; }

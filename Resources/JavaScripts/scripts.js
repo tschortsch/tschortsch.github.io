@@ -1,6 +1,6 @@
 $(document).ready(function() {
     // initialize tooltip plugin
-    $('.twitter-bird-box').tooltip();
+    $('#twitter-bird-box').tooltip();
 
     // set current year in copyright
     $('#current-year').html(new Date().getFullYear());
@@ -170,7 +170,7 @@ $(document).ready(function() {
         }
 
         if (birdMoveAnimationInitialized) {
-            console.log("bird move animation already initialized!");
+            console.log("Bird move animation already initialized!");
             return;
         }
 
