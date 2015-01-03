@@ -10,12 +10,12 @@ body {
     content: url(../Images/twitter-bird-sprite.png); }
 
 strong {
-  font-weight: 500; }
+  font-weight: 400; }
 
 h1 {
   margin-top: 15px;
   color: #000000;
-  font-weight: 500;
+  font-weight: 400;
   font-size: 34px; }
 
 .avatar {
