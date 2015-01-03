@@ -38,14 +38,31 @@ h1 {
 }
 
 // Facts
+@-webkit-keyframes shake {
+    @include shake(30);
+}
+@keyframes shake {
+    @include shake(30);
+}
+
 .facts {
     margin-top: 2 * $block-margin;
 
     >li {
         margin-bottom: 3px;
+        opacity: 1;
+        transition: opacity $fade-transition;
 
         i {
             color: lighten($color-base, 25%);
+        }
+
+        &.grey-out {
+            opacity: 0.5;
+        }
+        &:hover > i {
+            -webkit-animation: shake 1000ms;
+            animation: shake 1000ms;
         }
     }
 }
@@ -113,8 +130,8 @@ h1 {
     a:hover, a:active, a:focus {
         color: #fff;
         border-color: transparent;
-        -webkit-animation: pulse 1000ms;
-        animation: pulse 1000ms;
+        -webkit-animation: pulse 1200ms;
+        animation: pulse 12000ms;
     }
 }
 

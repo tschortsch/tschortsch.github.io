@@ -24,12 +24,87 @@ h1 {
     -webkit-transform: rotate(180deg);
     transform: rotate(180deg); }
 
+@-webkit-keyframes shake {
+  0% {
+    -webkit-transform: rotateZ(0);
+    transform: rotateZ(0); }
+  10% {
+    -webkit-transform: rotateZ(-30deg);
+    transform: rotateZ(-30deg); }
+  20% {
+    -webkit-transform: rotateZ(15deg);
+    transform: rotateZ(15deg); }
+  30% {
+    -webkit-transform: rotateZ(-10deg);
+    transform: rotateZ(-10deg); }
+  40% {
+    -webkit-transform: rotateZ(7.5deg);
+    transform: rotateZ(7.5deg); }
+  50% {
+    -webkit-transform: rotateZ(-6deg);
+    transform: rotateZ(-6deg); }
+  60% {
+    -webkit-transform: rotateZ(5deg);
+    transform: rotateZ(5deg); }
+  70% {
+    -webkit-transform: rotateZ(-4.28571deg);
+    transform: rotateZ(-4.28571deg); }
+  80% {
+    -webkit-transform: rotateZ(3.75deg);
+    transform: rotateZ(3.75deg); }
+  90% {
+    -webkit-transform: rotateZ(-3.33333deg);
+    transform: rotateZ(-3.33333deg); }
+  100% {
+    -webkit-transform: rotateZ(0);
+    transform: rotateZ(0); } }
+@keyframes shake {
+  0% {
+    -webkit-transform: rotateZ(0);
+    transform: rotateZ(0); }
+  10% {
+    -webkit-transform: rotateZ(-30deg);
+    transform: rotateZ(-30deg); }
+  20% {
+    -webkit-transform: rotateZ(15deg);
+    transform: rotateZ(15deg); }
+  30% {
+    -webkit-transform: rotateZ(-10deg);
+    transform: rotateZ(-10deg); }
+  40% {
+    -webkit-transform: rotateZ(7.5deg);
+    transform: rotateZ(7.5deg); }
+  50% {
+    -webkit-transform: rotateZ(-6deg);
+    transform: rotateZ(-6deg); }
+  60% {
+    -webkit-transform: rotateZ(5deg);
+    transform: rotateZ(5deg); }
+  70% {
+    -webkit-transform: rotateZ(-4.28571deg);
+    transform: rotateZ(-4.28571deg); }
+  80% {
+    -webkit-transform: rotateZ(3.75deg);
+    transform: rotateZ(3.75deg); }
+  90% {
+    -webkit-transform: rotateZ(-3.33333deg);
+    transform: rotateZ(-3.33333deg); }
+  100% {
+    -webkit-transform: rotateZ(0);
+    transform: rotateZ(0); } }
 .facts {
   margin-top: 30px; }
   .facts > li {
-    margin-bottom: 3px; }
+    margin-bottom: 3px;
+    opacity: 1;
+    transition: opacity 0.5s ease-in-out; }
     .facts > li i {
       color: #737373; }
+    .facts > li.grey-out {
+      opacity: 0.5; }
+    .facts > li:hover > i {
+      -webkit-animation: shake 1000ms;
+      animation: shake 1000ms; }
 
 @-webkit-keyframes pulse {
   0% {
@@ -106,8 +181,8 @@ h1 {
   .social-buttons a:hover, .social-buttons a:active, .social-buttons a:focus {
     color: #fff;
     border-color: transparent;
-    -webkit-animation: pulse 1000ms;
-    animation: pulse 1000ms; }
+    -webkit-animation: pulse 1200ms;
+    animation: pulse 12000ms; }
 
 #twitter-bird-box {
   display: none;

@@ -8,6 +8,9 @@ $(document).ready(function() {
     // set current age
     $('#current-age').html(tschortsch.calculateAge());
 
+    // initialize hover effect on facts
+    tschortsch.initHoverEffect();
+
     // only initialize animation if browser supports it (every browser but IE9 or older) (http://tanalin.com/en/articles/ie-version-js/)
     if (!(document.all && !window.atob)) {
         // wait 5sec to complete rendering of page before initializing bird move animation
@@ -195,6 +198,17 @@ $(document).ready(function() {
             birdMoveAnimationTimer = setTimeout(startBirdMoveAnimation, idleTime);
         });
         birdMoveAnimationInitialized = true;
+    };
+
+    tschortsch.initHoverEffect = function() {
+        $('ul.facts > li').hover(
+            function() {
+                $(this).closest('ul').find('li').not($(this)).addClass('grey-out');
+            },
+            function() {
+                $(this).closest('ul').find('li').not($(this)).removeClass('grey-out');
+            }
+        );
     };
 
     tschortsch.calculateAge = function() {
