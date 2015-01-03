@@ -1,6 +1,6 @@
 body {
-  padding-top: 50px;
-  padding-bottom: 50px;
+  padding-top: 40px;
+  padding-bottom: 40px;
   font-family: "Source Sans Pro", sans-serif;
   font-size: 16px;
   font-weight: 300;
@@ -90,7 +90,9 @@ h1 {
 .social-buttons {
   margin-top: 15px; }
   .social-buttons div.tooltip {
-    font-family: "Source Sans Pro", sans-serif; }
+    font-family: "Source Sans Pro", sans-serif;
+    font-weight: 300;
+    font-size: 10px; }
   .social-buttons a {
     margin-right: 5px;
     width: 40px;
@@ -153,8 +155,8 @@ h1 {
     background-position: -90px 0; } }
 .twitter-bird-move {
   position: relative;
-  -webkit-animation: bird-move 5s steps(100) 1 forwards;
-  animation: bird-move 5s steps(100) 1 forwards; }
+  -webkit-animation: bird-move 4s steps(100) 1 forwards;
+  animation: bird-move 4s steps(100) 1 forwards; }
 
 @-webkit-keyframes bird-move {
   0% {
@@ -166,13 +168,13 @@ h1 {
     -webkit-transform: scaleX(1);
     transform: scaleX(1); }
   50% {
-    top: -200px;
-    left: 300px;
+    top: 50px;
+    left: 250px;
     -webkit-transform: scaleX(-1);
     transform: scaleX(-1); }
   100% {
-    top: -316px;
-    left: 188px;
+    top: -66px;
+    left: 148px;
     -webkit-transform: scaleX(-1);
     transform: scaleX(-1); } }
 @keyframes bird-move {
@@ -185,13 +187,13 @@ h1 {
     -webkit-transform: scaleX(1);
     transform: scaleX(1); }
   50% {
-    top: -200px;
-    left: 300px;
+    top: 50px;
+    left: 250px;
     -webkit-transform: scaleX(-1);
     transform: scaleX(-1); }
   100% {
-    top: -316px;
-    left: 188px;
+    top: -66px;
+    left: 148px;
     -webkit-transform: scaleX(-1);
     transform: scaleX(-1); } }
 footer {

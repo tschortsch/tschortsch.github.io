@@ -3,11 +3,11 @@
 
 // Global
 body {
-    padding-top: 50px;
-    padding-bottom: 50px;
+    padding-top: 40px;
+    padding-bottom: 40px;
     font-family: $font-family-base;
     font-size: $font-size-base;
-    font-weight: 300;
+    font-weight: $font-weight-base;
     color: #666;
 
     // preloading images
@@ -83,6 +83,8 @@ h1 {
 
     div.tooltip {
         font-family: $font-family-base;
+        font-weight: $font-weight-base;
+        font-size: 10px;
     }
 
     a {
@@ -167,8 +169,8 @@ h1 {
 
 .twitter-bird-move {
     position: relative;
-    -webkit-animation: bird-move 5s steps(100) 1 forwards;
-    animation: bird-move 5s steps(100) 1 forwards;
+    -webkit-animation: bird-move 4s steps(100) 1 forwards;
+    animation: bird-move 4s steps(100) 1 forwards;
 }
 @mixin bird-move-keyframes {
     0% {
@@ -182,14 +184,14 @@ h1 {
         transform: scaleX(1);
     }
     50% {
-        top: -200px;
-        left: 300px;
+        top: 50px;
+        left: 250px;
         -webkit-transform: scaleX(-1);
         transform: scaleX(-1);
     }
     100% {
-        top: -316px;
-        left: 188px;
+        top: -66px;
+        left: 148px;
         -webkit-transform: scaleX(-1);
         transform: scaleX(-1);
     }
