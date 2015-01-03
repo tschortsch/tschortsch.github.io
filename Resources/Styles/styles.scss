@@ -144,8 +144,8 @@ h1 {
 
 .twitter-bird-move {
     position: relative;
-    -webkit-animation: bird-move 4s steps(100) 1 forwards;
-    animation: bird-move 4s steps(100) 1 forwards;
+    -webkit-animation: bird-move 3s steps(100) 1 forwards;
+    animation: bird-move 3s steps(100) 1 forwards;
 }
 @mixin bird-move-keyframes {
     0% {
@@ -159,7 +159,7 @@ h1 {
         transform: scaleX(1);
     }
     60% {
-        top: -25px;
+        top: -35px;
         left: 250px;
         -webkit-transform: scaleX(-1);
         transform: scaleX(-1);
