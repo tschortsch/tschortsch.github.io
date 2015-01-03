@@ -102,7 +102,7 @@ h1 {
       color: #737373; }
     .facts > li.grey-out {
       opacity: 0.5; }
-    .facts > li:hover > i {
+    .facts > li:hover > i.fa-li {
       -webkit-animation: shake 1000ms;
       animation: shake 1000ms; }
 

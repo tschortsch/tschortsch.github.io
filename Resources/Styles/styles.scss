@@ -60,7 +60,7 @@ h1 {
         &.grey-out {
             opacity: 0.5;
         }
-        &:hover > i {
+        &:hover > i.fa-li {
             -webkit-animation: shake 1000ms;
             animation: shake 1000ms;
         }
