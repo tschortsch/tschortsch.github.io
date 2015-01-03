@@ -84,6 +84,8 @@ h1 {
     font-size: 18px;
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     color: #fff; }
+    .social-buttons a i.fa {
+      line-height: 27px; }
     .social-buttons a.twitter {
       background-color: #55acee; }
       .social-buttons a.twitter div.tooltip .tooltip-inner {

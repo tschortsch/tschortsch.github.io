@@ -77,6 +77,10 @@ h1 {
         font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
         color: #fff;
 
+        i.fa {
+            line-height: 27px;
+        }
+
         &.twitter {
             background-color: $color-twitter;
             div.tooltip {
