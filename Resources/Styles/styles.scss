@@ -7,6 +7,8 @@ body {
     padding-bottom: 40px;
     font-family: $font-family-base;
     font-size: $font-size-base;
+    font-weight: $font-weight-base;
+    color: #666;
 
     // preloading images
     &:after {
@@ -14,9 +16,25 @@ body {
         content: url(../Images/twitter-bird-sprite.png);
     }
 }
+strong {
+    font-weight: 500;
+}
 
 h1 {
-    font-weight: 600;
+    margin-top: 0;
+    color: #000;
+    font-weight: 500;
+    font-size: 30px;
+}
+
+@media screen and (max-width: 767px) {
+    .name,
+    .social-buttons {
+        text-align: center;
+    }
+    .name {
+        margin-top: 15px;
+    }
 }
 
 #top-border {
@@ -45,18 +63,32 @@ h1 {
 
     >li {
         margin-bottom: 3px;
+
+        i {
+            color: #898989;
+        }
     }
 }
 
 // Social buttons
+@-webkit-keyframes pulse {
+    @include pulse(0.85);
+}
+@keyframes pulse {
+    @include pulse(0.85);
+}
+
 .social-buttons {
-    margin-top: $block-margin + 10px;
+    margin-top: 15px;
 
     div.tooltip {
         font-family: $font-family-base;
+        font-weight: $font-weight-base;
+        font-size: 10px;
     }
 
     a {
+        margin-right: 5px;
         width: 40px;
         height: 40px;
         border-radius: 50%;
@@ -69,7 +101,7 @@ h1 {
             line-height: 27px;
         }
         &.twitter {
-            background-color: lighten($color-twitter, 15%);
+            background-color: $color-twitter;
             div.tooltip {
                 .tooltip-inner {
                     background-color: $color-twitter;
@@ -79,29 +111,6 @@ h1 {
                     left: 70% !important;
                 }
             }
-        }
-        &.facebook {
-            background-color: lighten($color-facebook, 30%);
-        }
-        &.github {
-            background-color: lighten($color-github, 30%);
-        }
-        &.xing {
-            background-color: lighten($color-xing, 15%);
-        }
-        &.linkedin {
-            background-color: lighten($color-linkedin, 40%);
-        }
-        &.tumblr {
-            background-color: lighten($color-tumblr, 30%);
-        }
-    }
-
-    a:hover, a:active, a:focus {
-        color: #fff;
-        border-color: transparent;
-        &.twitter {
-            background-color: $color-twitter;
         }
         &.facebook {
             background-color: $color-facebook;
@@ -118,6 +127,13 @@ h1 {
         &.tumblr {
             background-color: $color-tumblr;
         }
+    }
+
+    a:hover, a:active, a:focus {
+        color: #fff;
+        border-color: transparent;
+        -webkit-animation: pulse 1000ms;
+        animation: pulse 1000ms;
     }
 }
 
@@ -153,8 +169,8 @@ h1 {
 
 .twitter-bird-move {
     position: relative;
-    -webkit-animation: bird-move 5s steps(100) 1 forwards;
-    animation: bird-move 5s steps(100) 1 forwards;
+    -webkit-animation: bird-move 4s steps(100) 1 forwards;
+    animation: bird-move 4s steps(100) 1 forwards;
 }
 @mixin bird-move-keyframes {
     0% {
@@ -168,14 +184,14 @@ h1 {
         transform: scaleX(1);
     }
     50% {
-        top: -200px;
-        left: 300px;
+        top: 50px;
+        left: 250px;
         -webkit-transform: scaleX(-1);
         transform: scaleX(-1);
     }
     100% {
-        top: -316px;
-        left: 188px;
+        top: -66px;
+        left: 148px;
         -webkit-transform: scaleX(-1);
         transform: scaleX(-1);
     }
@@ -189,9 +205,11 @@ h1 {
 
 // Footer
 footer {
+    border-top: 1px solid #f5f5f5;
     color: $color-footer;
     font-size: $font-size-footer;
-    margin-top: 10px;
+    margin-top: 20px;
+    padding-top: 15px;
 }
 
 @import "print";

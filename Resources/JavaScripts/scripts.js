@@ -1,6 +1,6 @@
 $(document).ready(function() {
     // initialize tooltip plugin
-    $('.social-buttons a').tooltip();
+    $('.twitter-bird-box').tooltip();
 
     // set current year in copyright
     $('#current-year').html(new Date().getFullYear());
@@ -69,12 +69,12 @@ $(document).ready(function() {
     }
 
     function calculateDistanceX(elementA, elementB) {
-        var targetPositionOffsetX = 18;
+        var targetPositionOffsetX = 16;
         return elementB.offset().left - elementA.offset().left - targetPositionOffsetX;
     }
 
     function calculateDistanceY(elementA, elementB) {
-        var targetPositionOffsetY = 13;
+        var targetPositionOffsetY = 15;
         return elementB.offset().top - elementA.offset().top - targetPositionOffsetY;
     }
 
