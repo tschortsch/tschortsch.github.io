@@ -110,44 +110,6 @@ h1 {
     .facts > li a:hover.hireme {
       font-size: 1.2em; }
 
-@-webkit-keyframes pulse {
-  0% {
-    -webkit-transform: scaleX(1) scaleY(1);
-    transform: scaleX(1) scaleY(1); }
-  10% {
-    -webkit-transform: scaleX(0.85) scaleY(0.85);
-    transform: scaleX(0.85) scaleY(0.85); }
-  20% {
-    -webkit-transform: scaleX(1) scaleY(1);
-    transform: scaleX(1) scaleY(1); }
-  30% {
-    -webkit-transform: scaleX(0.85) scaleY(0.85);
-    transform: scaleX(0.85) scaleY(0.85); }
-  40% {
-    -webkit-transform: scaleX(1) scaleY(1);
-    transform: scaleX(1) scaleY(1); }
-  100% {
-    -webkit-transform: scaleX(1) scaleY(1);
-    transform: scaleX(1) scaleY(1); } }
-@keyframes pulse {
-  0% {
-    -webkit-transform: scaleX(1) scaleY(1);
-    transform: scaleX(1) scaleY(1); }
-  10% {
-    -webkit-transform: scaleX(0.85) scaleY(0.85);
-    transform: scaleX(0.85) scaleY(0.85); }
-  20% {
-    -webkit-transform: scaleX(1) scaleY(1);
-    transform: scaleX(1) scaleY(1); }
-  30% {
-    -webkit-transform: scaleX(0.85) scaleY(0.85);
-    transform: scaleX(0.85) scaleY(0.85); }
-  40% {
-    -webkit-transform: scaleX(1) scaleY(1);
-    transform: scaleX(1) scaleY(1); }
-  100% {
-    -webkit-transform: scaleX(1) scaleY(1);
-    transform: scaleX(1) scaleY(1); } }
 .social-buttons {
   margin-top: 15px; }
   .social-buttons div.tooltip {
@@ -184,9 +146,7 @@ h1 {
       background-color: #35465c; }
   .social-buttons a:hover, .social-buttons a:active, .social-buttons a:focus {
     color: #fff;
-    border-color: transparent;
-    -webkit-animation: pulse 1200ms;
-    animation: pulse 1200ms; }
+    border-color: transparent; }
 
 #twitter-bird-box {
   display: none;

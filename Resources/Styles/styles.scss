@@ -74,13 +74,6 @@ h1 {
 }
 
 // Social buttons
-@-webkit-keyframes pulse {
-    @include pulse(0.85);
-}
-@keyframes pulse {
-    @include pulse(0.85);
-}
-
 .social-buttons {
     margin-top: $block-margin;
 
@@ -136,8 +129,6 @@ h1 {
     a:hover, a:active, a:focus {
         color: #fff;
         border-color: transparent;
-        -webkit-animation: pulse 1200ms;
-        animation: pulse 1200ms;
     }
 }
 
