@@ -6,10 +6,10 @@
     "url": "git://github.com/tschortsch/tschortsch.github.io.git"
   },
   "devDependencies": {
-    "gulp": "^3.8.10",
-    "gulp-jshint": "^1.9.0",
-    "gulp-scss-lint": "^0.1.4",
-    "gulp-bootlint": "^0.2.3"
+    "gulp": "^3.8.11",
+    "gulp-jshint": "^1.9.2",
+    "gulp-scss-lint": "^0.1.7",
+    "gulp-bootlint": "^0.3.0"
   },
   "scripts": {
     "test": "gulp travis"
