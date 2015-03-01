@@ -1,5 +1,4 @@
 @import "variables";
-@import "mixins";
 
 // Global
 body {
@@ -38,37 +37,14 @@ h1 {
 }
 
 // Facts
-@-webkit-keyframes shake {
-    @include shake(30);
-}
-@keyframes shake {
-    @include shake(30);
-}
-
 .facts {
     margin-top: 2 * $block-margin;
 
     >li {
         margin-bottom: 3px;
-        opacity: 1;
-        transition: opacity $fade-transition;
 
         i.fa-li {
             color: lighten($color-base, 25%);
-        }
-
-        &.grey-out {
-            opacity: 0.5;
-        }
-        &:hover > i.fa-li {
-            -webkit-animation: shake 1000ms;
-            animation: shake 1000ms;
-        }
-        a.hireme {
-            transition: font-size .2s ease-in-out;
-        }
-        a:hover.hireme {
-            font-size: 1.2em;
         }
     }
 }
