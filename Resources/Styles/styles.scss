@@ -85,20 +85,20 @@ h1 {
                 }
             }
         }
+        &.github {
+            background-color: $color-github;
+        }
         &.facebook {
             background-color: $color-facebook;
         }
-        &.github {
-            background-color: $color-github;
+        &.tumblr {
+            background-color: $color-tumblr;
         }
         &.xing {
             background-color: $color-xing;
         }
         &.linkedin {
             background-color: $color-linkedin;
-        }
-        &.tumblr {
-            background-color: $color-tumblr;
         }
     }
 
@@ -173,7 +173,7 @@ h1 {
 }
 
 // Footer
-footer {
+footer .content {
     border-top: 1px solid $color-footer-separator;
     color: $color-footer;
     font-size: $font-size-footer;
