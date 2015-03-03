@@ -1,4 +1,4 @@
-# [tschortsch.github.io](http://juerghunziker.ch)
+# [juerghunziker.ch](http://juerghunziker.ch)
 
 Portfolio page of Jürg Hunziker.
 
