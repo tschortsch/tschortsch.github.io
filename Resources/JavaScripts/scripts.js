@@ -6,7 +6,7 @@ $(document).ready(function() {
     $('#current-year').html(new Date().getFullYear());
 
     // set current age
-    $('#current-age').html(tschortsch.calculateAge());
+    $('#current-age').html(tschortsch.calculateAge(1985, 5, 2));
 
     // only initialize animation if browser supports it (every browser but IE9 or older) (http://tanalin.com/en/articles/ie-version-js/)
     if (!(document.all && !window.atob)) {
@@ -197,8 +197,8 @@ $(document).ready(function() {
         birdMoveAnimationInitialized = true;
     };
 
-    tschortsch.calculateAge = function() {
-        var birthDate = new Date(1985, 4, 2), // Attention: month parameter is 0-based!
+    tschortsch.calculateAge = function(year, month, day) {
+        var birthDate = new Date(year, month - 1, day), // Attention: month parameter is 0-based!
             today = new Date(),
             age, m;
 
