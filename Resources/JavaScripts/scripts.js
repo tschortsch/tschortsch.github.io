@@ -80,7 +80,7 @@ $(document).ready(function() {
 
     function adjustBirdMoveAnimation(birdMoveRule) {
         var startPositionElement = $('.social-buttons a.twitter'),
-            targetPositionElement = $('.target-position'),
+            targetPositionElement = $('#target-position'),
             newAnimationEndRule;
 
         if (!birdMoveRule) {
