@@ -161,6 +161,7 @@ $(document).ready(function() {
 
     tschortsch.initBirdMoveAnimation = function() {
         var birdMoveRule,
+            webkitBirdMoveRule,
             idleTime = 10000,
             birdMoveAnimationTimer;
 
@@ -175,7 +176,9 @@ $(document).ready(function() {
         }
 
         birdMoveRule = getKeyframeRule("bird-move", document.URL + "Resources/Styles/styles.css");
+        webkitBirdMoveRule = getKeyframeRule("-webkit-bird-move", document.URL + "Resources/Styles/styles.css");
         adjustBirdMoveAnimation(birdMoveRule);
+        adjustBirdMoveAnimation(webkitBirdMoveRule);
 
         birdMoveAnimationTimer = setTimeout(startBirdMoveAnimation, idleTime);
         $('body').bind('mousemove scroll touchmove touchstart mousedown keydown', function(event) {
@@ -185,6 +188,7 @@ $(document).ready(function() {
         $(window).resize(function() {
             birdMoveAnimationTimer = resetBirdMoveAnimationTimer(birdMoveAnimationTimer, idleTime);
             adjustBirdMoveAnimation(birdMoveRule);
+            adjustBirdMoveAnimation(webkitBirdMoveRule);
         });
         $(window).blur(function() {
             stopBirdMoveAnimation();
@@ -192,6 +196,7 @@ $(document).ready(function() {
         });
         $(window).focus(function() {
             adjustBirdMoveAnimation(birdMoveRule);
+            adjustBirdMoveAnimation(webkitBirdMoveRule);
             birdMoveAnimationTimer = setTimeout(startBirdMoveAnimation, idleTime);
         });
         birdMoveAnimationInitialized = true;
