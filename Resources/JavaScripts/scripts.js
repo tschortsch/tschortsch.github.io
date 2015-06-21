@@ -78,28 +78,32 @@ $(document).ready(function() {
         return elementB.offset().top - elementA.offset().top - targetPositionOffsetY;
     }
 
-    function adjustBirdMoveAnimation(birdMoveRule) {
+    function adjustBirdMoveAnimation(birdMoveRule, webkitBirdMoveRule) {
         var startPositionElement = $('.social-buttons a.twitter'),
             targetPositionElement = $('#target-position'),
             newAnimationEndRule;
 
-        if (!birdMoveRule) {
+        if (!birdMoveRule || !webkitBirdMoveRule) {
             return;
         }
 
         // In IE the deleteRule function only accepts numbers from 0 to 1
         if(tschortsch.ie) {
             birdMoveRule.deleteRule(1);
+            webkitBirdMoveRule.deleteRule(1);
         } else {
             birdMoveRule.deleteRule("100%");
+            webkitBirdMoveRule.deleteRule("100%");
         }
 
         newAnimationEndRule = "100% { -webkit-transform: scaleX(-1); transform: scaleX(-1); top: " + calculateDistanceY(startPositionElement, targetPositionElement) + "px; left: " + calculateDistanceX(startPositionElement, targetPositionElement) + "px; }";
         // Check if appendRule function is available (for Mozilla browsers) (see: https://developer.mozilla.org/en-US/docs/Web/API/CSSKeyframesRule)
         if ($.isFunction(birdMoveRule.appendRule)) {
             birdMoveRule.appendRule(newAnimationEndRule);
+            webkitBirdMoveRule.appendRule(newAnimationEndRule);
         } else {
             birdMoveRule.insertRule(newAnimationEndRule);
+            webkitBirdMoveRule.insertRule(newAnimationEndRule);
         }
     }
 
@@ -177,8 +181,7 @@ $(document).ready(function() {
 
         birdMoveRule = getKeyframeRule("bird-move", document.URL + "Resources/Styles/styles.css");
         webkitBirdMoveRule = getKeyframeRule("-webkit-bird-move", document.URL + "Resources/Styles/styles.css");
-        adjustBirdMoveAnimation(birdMoveRule);
-        adjustBirdMoveAnimation(webkitBirdMoveRule);
+        adjustBirdMoveAnimation(birdMoveRule, webkitBirdMoveRule);
 
         birdMoveAnimationTimer = setTimeout(startBirdMoveAnimation, idleTime);
         $('body').bind('mousemove scroll touchmove touchstart mousedown keydown', function(event) {
@@ -187,16 +190,14 @@ $(document).ready(function() {
 
         $(window).resize(function() {
             birdMoveAnimationTimer = resetBirdMoveAnimationTimer(birdMoveAnimationTimer, idleTime);
-            adjustBirdMoveAnimation(birdMoveRule);
-            adjustBirdMoveAnimation(webkitBirdMoveRule);
+            adjustBirdMoveAnimation(birdMoveRule, webkitBirdMoveRule);
         });
         $(window).blur(function() {
             stopBirdMoveAnimation();
             clearTimeout(birdMoveAnimationTimer);
         });
         $(window).focus(function() {
-            adjustBirdMoveAnimation(birdMoveRule);
-            adjustBirdMoveAnimation(webkitBirdMoveRule);
+            adjustBirdMoveAnimation(birdMoveRule, webkitBirdMoveRule);
             birdMoveAnimationTimer = setTimeout(startBirdMoveAnimation, idleTime);
         });
         birdMoveAnimationInitialized = true;
