@@ -9,7 +9,7 @@
     "gulp": "^3.9.0",
     "gulp-jshint": "^1.11.0",
     "gulp-scss-lint": "^0.2.0",
-    "gulp-bootlint": "^0.5.1"
+    "gulp-bootlint": "^0.6.0"
   },
   "scripts": {
     "test": "gulp travis"
