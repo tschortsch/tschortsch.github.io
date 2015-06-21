@@ -170,7 +170,7 @@ $(document).ready(function() {
             birdMoveAnimationTimer;
 
         if (document.all && !window.atob) {
-            console.log("Internet Explorer 9 and older doesn't support CSS3 animations. So stop trying!");
+            console.log("Internet Explorer 9 and older don't support CSS3 animations. So stop trying!");
             return;
         }
 
