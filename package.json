@@ -1,15 +1,16 @@
 {
   "name": "tschortsch.github.io",
   "version": "2.0.0",
+  "license": "MIT",
   "repository": {
     "type": "git",
     "url": "git://github.com/tschortsch/tschortsch.github.io.git"
   },
   "devDependencies": {
     "gulp": "^3.9.0",
-    "gulp-jshint": "^1.11.0",
-    "gulp-scss-lint": "^0.2.0",
-    "gulp-bootlint": "^0.6.0"
+    "gulp-bootlint": "^0.6.4",
+    "gulp-jshint": "^1.11.2",
+    "gulp-scss-lint": "^0.2.2"
   },
   "scripts": {
     "test": "gulp travis"
