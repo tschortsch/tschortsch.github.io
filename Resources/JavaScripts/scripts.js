@@ -56,8 +56,8 @@ $(document).ready(function() {
 
         for (i = 0; i < ss.length; ++i) {
             if (ss[i].href === styleSheetUrl && ss[i].cssRules) {
-                // loop through all the rules
-                for (x = 0; x < ss[i].cssRules.length; ++x) {
+                // loop through all the rules (from bottom to top -> the most bottom matching rule is the applied rule)
+                for (x = ss[i].cssRules.length - 1; x >= 0; --x) {
                     rule = ss[i].cssRules[x];
                     if ((rule.type === window.CSSRule.KEYFRAMES_RULE || rule.type === window.CSSRule.WEBKIT_KEYFRAMES_RULE) && rule.name === ruleName) {
                         return rule;
@@ -175,10 +175,6 @@ $(document).ready(function() {
         }
 
         birdMoveRule = getKeyframeRule("bird-move", document.URL + "Resources/Styles/styles.css");
-        // if bird-move rule was not found look for prefixed -webkit-bird-move rule
-        if(!birdMoveRule) {
-            birdMoveRule = getKeyframeRule("-webkit-bird-move", document.URL + "Resources/Styles/styles.css");
-        }
         adjustBirdMoveAnimation(birdMoveRule);
 
         birdMoveAnimationTimer = setTimeout(startBirdMoveAnimation, idleTime);
