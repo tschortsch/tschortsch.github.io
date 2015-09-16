@@ -113,7 +113,7 @@ div.tooltip {
     transform: scaleX(1); }
   60% {
     top: -35px;
-    left: 250px;
+    left: 300px;
     -webkit-transform: scaleX(-1);
     transform: scaleX(-1); }
   100% {
@@ -132,7 +132,7 @@ div.tooltip {
     transform: scaleX(1); }
   60% {
     top: -35px;
-    left: 250px;
+    left: 300px;
     -webkit-transform: scaleX(-1);
     transform: scaleX(-1); }
   100% {
