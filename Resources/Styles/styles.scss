@@ -2,8 +2,8 @@
 
 // Global
 body {
-    padding-top: 2.5 * $block-margin;
-    padding-bottom: 2.5 * $block-margin;
+    padding-top: 3 * $block-margin;
+    padding-bottom: 3 * $block-margin;
     font-family: $font-family-base;
     font-size: $font-size-base;
     font-weight: $font-weight-base;
@@ -53,12 +53,6 @@ h1 {
 .social-buttons {
     margin-top: $block-margin;
 
-    div.tooltip {
-        font-family: $font-family-base;
-        font-weight: $font-weight-base;
-        font-size: 11px;
-    }
-
     a {
         margin-right: 5px;
         padding: 0;
@@ -76,15 +70,6 @@ h1 {
 
         &.twitter {
             background-color: $color-twitter;
-            div.tooltip {
-                .tooltip-inner {
-                    background-color: $color-twitter;
-                }
-                .tooltip-arrow {
-                    border-top-color: $color-twitter;
-                    left: 70% !important;
-                }
-            }
         }
         &.github {
             background-color: $color-github;
@@ -106,6 +91,19 @@ h1 {
     a:hover, a:active, a:focus {
         color: #fff;
         border-color: transparent;
+    }
+}
+div.tooltip {
+    font-family: $font-family-base;
+    font-weight: $font-weight-base;
+    font-size: 11px;
+
+    .tooltip-inner {
+        background-color: $color-twitter;
+    }
+    &.bs-tether-element-attached-bottom .tooltip-arrow {
+        border-top-color: $color-twitter;
+        left: 70% !important;
     }
 }
 

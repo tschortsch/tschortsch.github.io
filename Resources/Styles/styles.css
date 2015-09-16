@@ -1,6 +1,6 @@
 body {
-  padding-top: 2.5em;
-  padding-bottom: 2.5em;
+  padding-top: 3em;
+  padding-bottom: 3em;
   font-family: "Source Sans Pro", sans-serif;
   font-size: 18px;
   font-weight: 300;
@@ -33,10 +33,6 @@ h1 {
 
 .social-buttons {
   margin-top: 1em; }
-  .social-buttons div.tooltip {
-    font-family: "Source Sans Pro", sans-serif;
-    font-weight: 300;
-    font-size: 11px; }
   .social-buttons a {
     margin-right: 5px;
     padding: 0;
@@ -51,11 +47,6 @@ h1 {
       line-height: 46px; }
     .social-buttons a.twitter {
       background-color: #55acee; }
-      .social-buttons a.twitter div.tooltip .tooltip-inner {
-        background-color: #55acee; }
-      .social-buttons a.twitter div.tooltip .tooltip-arrow {
-        border-top-color: #55acee;
-        left: 70% !important; }
     .social-buttons a.github {
       background-color: #333333; }
     .social-buttons a.facebook {
@@ -69,6 +60,16 @@ h1 {
   .social-buttons a:hover, .social-buttons a:active, .social-buttons a:focus {
     color: #fff;
     border-color: transparent; }
+
+div.tooltip {
+  font-family: "Source Sans Pro", sans-serif;
+  font-weight: 300;
+  font-size: 11px; }
+  div.tooltip .tooltip-inner {
+    background-color: #55acee; }
+  div.tooltip.bs-tether-element-attached-bottom .tooltip-arrow {
+    border-top-color: #55acee;
+    left: 70% !important; }
 
 #twitter-bird-box {
   display: none;
