@@ -34,7 +34,7 @@ h1 {
 .social-buttons {
   margin-top: 1em; }
   .social-buttons a {
-    margin-right: 5px;
+    margin-right: 6px;
     padding: 0;
     width: 46px;
     height: 46px;
@@ -64,7 +64,7 @@ h1 {
 div.tooltip {
   font-family: "Source Sans Pro", sans-serif;
   font-weight: 300;
-  font-size: 11px; }
+  font-size: 0.72rem; }
   div.tooltip .tooltip-inner {
     background-color: #55acee; }
   div.tooltip.bs-tether-element-attached-bottom .tooltip-arrow {
