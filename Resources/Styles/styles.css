@@ -29,7 +29,8 @@ h1 {
   .facts > li {
     margin-bottom: 0.25em; }
     .facts > li i.fa-li {
-      color: #737373; }
+      color: #737373;
+      margin-top: 2px; }
 
 .social-buttons {
   margin-top: 1em; }
