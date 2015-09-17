@@ -1,8 +1,8 @@
 body {
-  padding-top: 2.5em;
-  padding-bottom: 2.5em;
+  padding-top: 3em;
+  padding-bottom: 3em;
   font-family: "Source Sans Pro", sans-serif;
-  font-size: 16px;
+  font-size: 18px;
   font-weight: 300;
   color: #333333; }
   body:after {
@@ -19,7 +19,7 @@ h1 {
   font-size: 2em; }
 
 .avatar {
-  width: 170px; }
+  width: 210px; }
   .avatar.inverse {
     -webkit-transform: rotate(180deg);
     transform: rotate(180deg); }
@@ -29,32 +29,25 @@ h1 {
   .facts > li {
     margin-bottom: 0.25em; }
     .facts > li i.fa-li {
-      color: #737373; }
+      color: #737373;
+      margin-top: 2px; }
 
 .social-buttons {
   margin-top: 1em; }
-  .social-buttons div.tooltip {
-    font-family: "Source Sans Pro", sans-serif;
-    font-weight: 300;
-    font-size: 11px; }
   .social-buttons a {
-    margin-right: 5px;
-    width: 40px;
-    height: 40px;
+    margin-right: 6px;
+    padding: 0;
+    width: 46px;
+    height: 46px;
     border-radius: 50%;
     border-color: transparent;
-    font-size: 18px;
+    font-size: 21px;
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     color: #fff; }
     .social-buttons a i.fa {
-      line-height: 27px; }
+      line-height: 46px; }
     .social-buttons a.twitter {
       background-color: #55acee; }
-      .social-buttons a.twitter div.tooltip .tooltip-inner {
-        background-color: #55acee; }
-      .social-buttons a.twitter div.tooltip .tooltip-arrow {
-        border-top-color: #55acee;
-        left: 70% !important; }
     .social-buttons a.github {
       background-color: #333333; }
     .social-buttons a.facebook {
@@ -68,6 +61,16 @@ h1 {
   .social-buttons a:hover, .social-buttons a:active, .social-buttons a:focus {
     color: #fff;
     border-color: transparent; }
+
+div.tooltip {
+  font-family: "Source Sans Pro", sans-serif;
+  font-weight: 300;
+  font-size: 0.72rem; }
+  div.tooltip .tooltip-inner {
+    background-color: #55acee; }
+  div.tooltip.bs-tether-element-attached-bottom .tooltip-arrow {
+    border-top-color: #55acee;
+    left: 70% !important; }
 
 #twitter-bird-box {
   display: none;
@@ -111,7 +114,7 @@ h1 {
     transform: scaleX(1); }
   60% {
     top: -35px;
-    left: 250px;
+    left: 300px;
     -webkit-transform: scaleX(-1);
     transform: scaleX(-1); }
   100% {
@@ -130,7 +133,7 @@ h1 {
     transform: scaleX(1); }
   60% {
     top: -35px;
-    left: 250px;
+    left: 300px;
     -webkit-transform: scaleX(-1);
     transform: scaleX(-1); }
   100% {

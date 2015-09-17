@@ -69,12 +69,12 @@ $(document).ready(function() {
     }
 
     function calculateDistanceX(elementA, elementB) {
-        var targetPositionOffsetX = 16;
+        var targetPositionOffsetX = 3;
         return elementB.offset().left - elementA.offset().left - targetPositionOffsetX;
     }
 
     function calculateDistanceY(elementA, elementB) {
-        var targetPositionOffsetY = 15;
+        var targetPositionOffsetY = 9;
         return elementB.offset().top - elementA.offset().top - targetPositionOffsetY;
     }
 
@@ -142,7 +142,7 @@ $(document).ready(function() {
             originalTop, originalLeft;
 
         twitterBirdBoxElement.tooltip('show');
-        followMeTooltipElement = $('a.twitter div.tooltip');
+        followMeTooltipElement = $('div.tooltip');
         originalTop = followMeTooltipElement.css("top").replace(/[^-\d\.]/g, '');
         originalLeft = followMeTooltipElement.css("left").replace(/[^-\d\.]/g, '');
         followMeTooltipElement.css("top", (parseInt(originalTop) + topOffset) + "px");
