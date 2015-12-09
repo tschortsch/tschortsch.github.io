@@ -183,10 +183,6 @@ footer .content {
 
 // center elements on big screens
 @media screen and (min-width: 768px) {
-    .name,
-    .social-buttons {
-        text-align: left;
-    }
     .name {
         margin-top: 0;
     }

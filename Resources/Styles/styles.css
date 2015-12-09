@@ -149,15 +149,16 @@ footer .content {
   padding-top: 1em; }
 
 @media screen and (min-width: 768px) {
-  .name,
-  .social-buttons {
-    text-align: left; }
-
   .name {
     margin-top: 0; } }
 @media print {
   .social-buttons a {
     display: block;
-    font-family: "Source Sans Pro", sans-serif; } }
+    font-family: "Source Sans Pro", sans-serif;
+    font-size: 18px;
+    height: inherit; }
+    .social-buttons a i.fa {
+      margin-right: 20px;
+      line-height: inherit; } }
 
 /*# sourceMappingURL=styles.css.map */
