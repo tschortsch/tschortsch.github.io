@@ -12,7 +12,7 @@ body {
     // preloading images
     &:after {
         display: none;
-        content: url(../Images/twitter-bird-sprite.png);
+        content: url(../images/twitter-bird-sprite.png);
     }
 }
 strong {
@@ -116,7 +116,7 @@ div.tooltip {
 }
 #twitter-bird {
     display: none;
-    background-image: url(../Images/twitter-bird-sprite.png);
+    background-image: url(../images/twitter-bird-sprite.png);
     background-size: 120px 30px;
     height: 30px;
     width: 30px;

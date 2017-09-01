@@ -174,7 +174,7 @@ $(document).ready(function() {
             return;
         }
 
-        birdMoveRule = getKeyframeRule("bird-move", document.URL + "Resources/Styles/styles.css");
+        birdMoveRule = getKeyframeRule("bird-move", document.URL + "assets/css/styles.css");
         adjustBirdMoveAnimation(birdMoveRule);
 
         birdMoveAnimationTimer = setTimeout(startBirdMoveAnimation, idleTime);
