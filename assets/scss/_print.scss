@@ -1,15 +1,15 @@
 @media print {
-    .social-buttons {
-        a {
-            display: block;
-            font-family: $font-family-base;
-            font-size: $font-size-base;
-            height: inherit;
+  .social-buttons {
+    a {
+      display: block;
+      font-family: $font-family-base;
+      font-size: $font-size-base;
+      height: inherit;
 
-            i.fa {
-                margin-right: 20px;
-                line-height: inherit;
-            }
-        }
+      .fa {
+        line-height: inherit;
+        margin-right: 20px;
+      }
     }
+  }
 }
