@@ -26,7 +26,10 @@ gulp.task('sass-lint', function() {
         .pipe(sassLint(
             {
                 rules: {
-                    'property-sort-order': 0
+                    'property-sort-order': 0,
+                    'force-element-nesting': 0,
+                    'force-pseudo-nesting': 0,
+                    'no-ids': 0
                 }
             }
         ))

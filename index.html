@@ -27,7 +27,9 @@
     <!-- Bootstrap -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
     <!-- Font Awesome -->
-    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css" rel="stylesheet">
+    <script defer src="./assets/js/fontawesome/packs/solid.min.js"></script>
+    <script defer src="./assets/js/fontawesome/packs/brands.min.js"></script>
+    <script defer src="./assets/js/fontawesome/fontawesome.min.js"></script>
     <!-- Google Font -->
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,300italic,400italic" rel="stylesheet" type="text/css">
 
@@ -49,34 +51,57 @@
 
                 <!-- social buttons -->
                 <div class="social-buttons text-center text-md-left">
-                    <a href="https://twitter.com/tschortsch85" target="_blank" class="btn btn-default twitter" role="button" title="Twitter">
-                        <div id="twitter-bird-box" data-toggle="tooltip" data-placement="top" data-trigger="manual" title="Follow me!">
-                            <div id="twitter-bird"></div>
-                        </div>
-                        <i class="fa fa-twitter"></i><span class="d-print-inline">https://twitter.com/tschortsch85</span>
+                    <a href="https://twitter.com/tschortsch85" target="_blank" class="twitter" title="Twitter">
+                        <span class="fa-stack fa-lg">
+                            <i class="fa fa-circle fa-stack-2x"></i>
+                            <i class="fab fa-twitter fa-stack-1x fa-inverse"></i>
+                            <div id="twitter-bird-box" data-toggle="tooltip" data-placement="top" data-trigger="manual" title="Follow me!">
+                                <div id="twitter-bird"></div>
+                            </div>
+                        </span>
+                        <span class="d-print-inline">https://twitter.com/tschortsch85</span>
                     </a>
-                    <a href="https://github.com/tschortsch" target="_blank" class="btn btn-default github" role="button" role="button" title="GitHub">
-                        <i class="fa fa-github"></i><span class="d-print-inline">https://github.com/tschortsch</span>
+                    <a href="https://github.com/tschortsch" target="_blank" class="github" title="GitHub">
+                        <span class="fa-stack fa-lg">
+                            <i class="fa fa-circle fa-stack-2x"></i>
+                            <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+                        </span>
+                        <span class="d-print-inline">https://github.com/tschortsch</span>
                     </a>
-                    <a href="https://www.facebook.com/juerg.hunziker" target="_blank" class="btn btn-default facebook" role="button" role="button" title="Facebook">
-                        <i class="fa fa-facebook"></i><span class="d-print-inline">https://www.facebook.com/juerg.hunziker</span>
+                    <a href="https://www.facebook.com/juerg.hunziker" target="_blank" class="facebook" title="Facebook">
+                        <span class="fa-stack fa-lg">
+                            <i class="fa fa-circle fa-stack-2x"></i>
+                            <i class="fab fa-facebook-f fa-stack-1x fa-inverse"></i>
+                        </span>
+                        <span class="d-print-inline">https://www.facebook.com/juerg.hunziker</span>
+                    <a href="http://blog.juerghunziker.ch" target="_blank" class="tumblr" title="Blog">
+                        <span class="fa-stack fa-lg">
+                            <i class="fa fa-circle fa-stack-2x"></i>
+                            <i class="fab fa-tumblr fa-stack-1x fa-inverse"></i>
+                        </span>
+                        <span class="d-print-inline">http://blog.juerghunziker.ch</span>
                     </a>
-                    <a href="http://blog.juerghunziker.ch" target="_blank" class="btn btn-default tumblr" role="button" role="button" title="Blog">
-                        <i class="fa fa-tumblr"></i><span class="d-print-inline">http://blog.juerghunziker.ch</span>
+                    <a href="https://ch.linkedin.com/in/juerghunziker" target="_blank" class="linkedin" title="LinkedIn">
+                        <span class="fa-stack fa-lg">
+                            <i class="fa fa-circle fa-stack-2x"></i>
+                            <i class="fab fa-linkedin fa-stack-1x fa-inverse"></i>
+                        </span>
+                        <span class="d-print-inline">https://ch.linkedin.com/in/juerghunziker</span>
                     </a>
-                    <a href="https://ch.linkedin.com/in/juerghunziker" target="_blank" class="btn btn-default linkedin" role="button" role="button" title="LinkedIn">
-                        <i class="fa fa-linkedin"></i><span class="d-print-inline">https://ch.linkedin.com/in/juerghunziker</span>
-                    </a>
-                    <a href="https://www.xing.com/profile/Juerg_Hunziker" target="_blank" class="btn btn-default xing" role="button" role="button" title="Xing">
-                        <i class="fa fa-xing"></i><span class="d-print-inline">https://www.xing.com/profile/Juerg_Hunziker</span>
+                    <a href="https://www.xing.com/profile/Juerg_Hunziker" target="_blank" class="xing" title="Xing">
+                        <span class="fa-stack fa-lg">
+                            <i class="fa fa-circle fa-stack-2x"></i>
+                            <i class="fab fa-xing fa-stack-1x fa-inverse"></i>
+                        </span>
+                        <span class="d-print-inline">https://www.xing.com/profile/Juerg_Hunziker</span>
                     </a>
                 </div>
 
                 <!-- facts -->
                 <ul class="fa-ul facts">
-                    <li><i class="fa-li fa fa-map-marker"></i>Winterthur, Switzerland</li>
+                    <li><i class="fa-li fa fa-map-marker-alt"></i>Winterthur, Switzerland</li>
                     <li><i class="fa-li fa fa-birthday-cake"></i><span id="current-age">32</span> years old</li>
-                    <li><i class="fa-li fa fa-building-o"></i>Webdeveloper @<a href="http://www.liip.ch" target="_blank">Liip</a></li>
+                    <li><i class="fa-li fa fa-building"></i>Webdeveloper @<a href="http://www.liip.ch" target="_blank">Liip</a></li>
                     <li><i class="fa-li fa fa-graduation-cap"></i>Bachelor of Science in Information Technology<br />HSR Hochschule für Technik Rapperswil</li>
                     <li><i class="fa-li fa fa-gamepad"></i>Creator of <a href="http://www.kort.ch" target="_blank">Kort Game</a></li>
                     <li><i class="fa-li fa fa-home"></i>Developing the web, logging the web, loving the web... and sometimes I even go outside.</li>
