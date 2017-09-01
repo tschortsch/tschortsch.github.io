@@ -85,14 +85,15 @@ h1 {
   }
 }
 
-div.tooltip {
+.tooltip {
   font-family: $font-family-base;
   font-weight: $font-weight-base;
-  font-size: 0.72rem;
+  font-size: .72rem;
 
   .tooltip-inner {
     background-color: $color-twitter;
   }
+
   &.bs-tooltip-top .arrow::before {
     border-top-color: $color-twitter;
     margin-left: -10px;
@@ -108,20 +109,21 @@ div.tooltip {
 
 #twitter-bird {
   display: none;
-  background-image: url(../images/twitter-bird-sprite.png);
+  background-image: url('../images/twitter-bird-sprite.png');
   background-size: 120px 30px;
   height: 30px;
   width: 30px;
 }
 
 .twitter-bird-fly {
-  animation: fly 0.2s steps(3) 18;
+  animation: fly .2s steps(3) 18;
 }
 
 @keyframes fly {
   0% {
     background-position: 0 0;
   }
+
   100% {
     background-position: -90px 0;
   }
@@ -134,18 +136,21 @@ div.tooltip {
 
 @keyframes bird-move {
   0% {
-    top: 0px;
-    left: 0px;
+    top: 0;
+    left: 0;
     transform: scaleX(1);
   }
+
   59% {
     transform: scaleX(1);
   }
+
   60% {
     top: -35px;
     left: 300px;
     transform: scaleX(-1);
   }
+
   100% {
     top: -66px;
     left: 148px;
