@@ -35,7 +35,7 @@ gulp.task('scripts-fontawesome', function() {
 gulp.task('scripts', ['scripts-website', 'scripts-fontawesome']);
 
 gulp.task('lint', function() {
-    return gulp.src('./assets/js/*.js')
+    return gulp.src(['./assets/js/scripts.js','./assets/js/fontawesome/packs/custom.js'])
         .pipe(jshint())
         .pipe(jshint.reporter('default'))
         .pipe(jshint.reporter('fail'));
