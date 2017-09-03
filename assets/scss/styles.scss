@@ -44,7 +44,7 @@ h1 {
 
     .fa-li {
       color: lighten($color-base, 25%);
-      margin-top: 0.222rem;
+      margin-top: .222rem;
     }
   }
 }
@@ -95,6 +95,7 @@ h1 {
     border-top-color: $color-twitter;
     margin-left: -10px;
   }
+
   &.bs-tooltip-auto[x-placement^=bottom] .arrow::before,
   &.bs-tooltip-bottom .arrow::before {
     border-bottom-color: $color-twitter;
