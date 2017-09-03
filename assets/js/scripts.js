@@ -74,7 +74,7 @@ $(document).ready(function() {
     }
 
     function calculateDistanceY(elementA, elementB) {
-        var targetPositionOffsetY = 9;
+        var targetPositionOffsetY = -17;
         return elementB.offset().top - elementA.offset().top - targetPositionOffsetY;
     }
 
