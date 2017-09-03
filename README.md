@@ -1,4 +1,4 @@
-# [juerghunziker.ch](http://juerghunziker.ch)
+# [juerghunziker.ch](https://juerghunziker.ch)
 
 Portfolio page of Jürg Hunziker.
 
