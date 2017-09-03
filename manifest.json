@@ -1,8 +1,9 @@
 {
   "manifest_version": 1,
   "name": "Jürg Hunziker",
+  "short_name": "Jürg Hunziker",
   "default_locale": "en",
-  "description": "About me page of Jürg Hunziker",
+  "description": "Portfolio page of Jürg Hunziker",
   "icons": [
     {
       "src": "//www.gravatar.com/avatar/41c42656cf67fce9e98e1053b3c0c889?s=36",
@@ -41,6 +42,7 @@
       "density": "4.0"
     }
   ],
+  "theme_color": "#becfdb",
   "start_url": "index.html",
   "display": "standalone",
   "orientation": "landscape"
