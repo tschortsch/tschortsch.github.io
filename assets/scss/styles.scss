@@ -54,6 +54,7 @@ h1 {
   margin-top: $block-margin;
 
   a {
+    display: block;
     text-decoration: none;
 
     &.twitter .fa-circle {
