@@ -91,7 +91,8 @@ h1 {
     background-color: $color-twitter;
   }
 
-  &.bs-tooltip-top .arrow::before {
+  &.bs-tooltip-top .arrow::before,
+  &.bs-tooltip-bottom .arrow::before {
     border-top-color: $color-twitter;
     margin-left: -10px;
   }
