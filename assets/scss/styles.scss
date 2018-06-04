@@ -96,6 +96,7 @@ h1 {
     margin-left: -10px;
   }
 
+  // sass-lint:disable force-attribute-nesting attribute-quotes
   &.bs-tooltip-auto[x-placement^=bottom] .arrow::before,
   &.bs-tooltip-bottom .arrow::before {
     border-bottom-color: $color-twitter;
