@@ -69,7 +69,7 @@ $(document).ready(function() {
     }
 
     function calculateDistanceX(elementA, elementB) {
-        var targetPositionOffsetX = 3;
+        var targetPositionOffsetX = 10;
         return elementB.offset().left - elementA.offset().left - targetPositionOffsetX;
     }
 
