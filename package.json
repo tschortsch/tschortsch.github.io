@@ -7,15 +7,15 @@
     "url": "git://github.com/tschortsch/tschortsch.github.io.git"
   },
   "devDependencies": {
-    "gulp": "^3.9.1",
-    "gulp-autoprefixer": "^5.0.0",
-    "gulp-bootlint": "^0.9.0",
+    "gulp": "^4.0.2",
+    "gulp-autoprefixer": "^6.1.0",
+    "gulp-bootlint": "^0.11.0",
     "gulp-jshint": "^2.1.0",
-    "gulp-rename": "^1.2.2",
-    "gulp-sass": "^4.0.1",
-    "gulp-sass-lint": "^1.3.4",
-    "gulp-uglify": "^3.0.0",
-    "jshint": "^2.9.5"
+    "gulp-rename": "^1.4.0",
+    "gulp-sass": "^4.0.2",
+    "gulp-sass-lint": "^1.4.0",
+    "gulp-uglify": "^3.0.2",
+    "jshint": "^2.10.2"
   },
   "scripts": {
     "test": "gulp travis",

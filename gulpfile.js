@@ -32,7 +32,7 @@ gulp.task('scripts-fontawesome', function() {
         .pipe(gulp.dest('./assets/js/fontawesome/packs'));
 });
 
-gulp.task('scripts', ['scripts-website', 'scripts-fontawesome']);
+gulp.task('scripts', gulp.series(gulp.parallel('scripts-website', 'scripts-fontawesome')));
 
 gulp.task('lint', function() {
     return gulp.src(['./assets/js/scripts.js','./assets/js/fontawesome/packs/custom.js'])
@@ -60,5 +60,5 @@ gulp.task('bootlint', function() {
         .pipe(bootlint());
 });
 
-gulp.task('default', ['lint', 'sass-lint', 'bootlint']);
-gulp.task('travis', ['lint', 'sass-lint', 'bootlint']);
+gulp.task('default', gulp.series(gulp.parallel('lint', 'sass-lint', 'bootlint')));
+gulp.task('travis', gulp.series(gulp.parallel('lint', 'sass-lint', 'bootlint')));
