@@ -83,12 +83,15 @@
 		class="bg-background/30 fixed top-0 right-0 m-5 rounded-full p-4 backdrop-blur-xs"
 	/>
 
-	<enhanced:img
-		src="$lib/assets/juerg.jpg?aspect=1:1&w=250;500"
-		sizes="(min-width: 250px) 250px, 100vw"
-		alt="Jürg Hunziker"
-		class="mb-5 aspect-square w-full max-w-[250px] rounded-full object-cover shadow-xl transition-all duration-500 hover:scale-105 hover:shadow-2xl dark:shadow-white/10 dark:hover:shadow-white/10"
-	/>
+	<div class="mb-5 aspect-square w-full max-w-[250px]">
+		<enhanced:img
+			src="$lib/assets/juerg.jpg?aspect=1:1&w=250;500"
+			sizes="(min-width: 250px) 250px, 100vw"
+			alt="Jürg Hunziker"
+			class="aspect-square w-full max-w-[250px] rounded-full object-cover shadow-xl transition-all duration-500 hover:scale-105 hover:shadow-2xl dark:shadow-white/10 dark:hover:shadow-white/10"
+		/>
+	</div>
+
 	<h1 class="mb-5">Jürg Hunziker</h1>
 	<ul class="mb-10 flex flex-wrap justify-center gap-3">
 		{#each socialIcons as socialIcon, index (index)}
