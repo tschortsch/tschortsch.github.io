@@ -1,9 +1,24 @@
-# [juerghunziker.ch](https://juerghunziker.ch)
+# Portfolio page of Jürg Hunziker
 
-Portfolio page of Jürg Hunziker.
+## Developing
 
-[![Build Status](https://travis-ci.org/tschortsch/tschortsch.github.io.svg?branch=develop)](https://travis-ci.org/tschortsch/tschortsch.github.io)
-[![devDependency Status](https://david-dm.org/tschortsch/tschortsch.github.io/dev-status.svg)](https://david-dm.org/tschortsch/tschortsch.github.io#info=devDependencies)
+Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
 
-## Idle animation
-Read all about the implementation of the moving Twitter bird in this blog entry: http://blog.juerghunziker.ch/post/92710198352/
+```bash
+npm run dev
+
+# or start the server and open the app in a new browser tab
+npm run dev -- --open
+```
+
+## Building
+
+To create a production version of your app:
+
+```bash
+npm run build
+```
+
+You can preview the production build with `npm run preview`.
+
+> To deploy your app, you may need to install an [adapter](https://svelte.dev/docs/kit/adapters) for your target environment.

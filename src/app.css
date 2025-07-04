@@ -1,0 +1,57 @@
+@import 'tailwindcss';
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+:root {
+	--background: #fff;
+	--foreground: #1c1c1c;
+	--muted: #535353;
+	--link: #2490e9;
+	--line: #ededed;
+}
+
+.dark {
+	--background: #0f0f0f;
+	--foreground: #fff;
+	--muted: #a7a7a7;
+	--link: #2490e9;
+	--line: #272727;
+}
+
+@theme inline {
+	--color-background: var(--background);
+	--color-foreground: var(--foreground);
+	--color-muted: var(--muted);
+	--color-link: var(--link);
+	--color-line: var(--line);
+	--color-github: rgb(51, 51, 51);
+	--color-linkedin: rgb(0, 119, 181);
+	--color-facebook: rgb(59, 89, 152);
+	--color-bsky: rgb(0, 133, 255);
+	--color-x: rgb(0, 0, 0);
+
+	--font-sans: 'Source Sans 3', sans-serif;
+
+	--shadow-2xl:
+		0 20px 25px -5px var(--tw-shadow-color, rgb(0 0 0 / 0.1)),
+		0 10px 20px -6px var(--tw-shadow-color, rgb(0 0 0 / 0.1));
+}
+
+@layer base {
+	body {
+		@apply bg-background text-foreground text-lg font-light;
+		font-optical-sizing: auto;
+	}
+
+	h1 {
+		@apply text-4xl font-normal;
+	}
+
+	a {
+		@apply text-link underline-offset-3 hover:underline;
+	}
+
+	hr {
+		@apply text-line;
+	}
+}
