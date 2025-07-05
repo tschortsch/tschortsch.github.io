@@ -11,11 +11,11 @@
 }
 
 .dark {
-	--background: #0f0f0f;
+	--background: #252525;
 	--foreground: #fff;
 	--muted: #a7a7a7;
 	--link: #2490e9;
-	--line: #272727;
+	--line: #3f3f3f;
 }
 
 @theme inline {
