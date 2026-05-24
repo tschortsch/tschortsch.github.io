@@ -1,37 +1,40 @@
 import { fileURLToPath } from 'node:url';
 import { includeIgnoreFile } from '@eslint/compat';
 import js from '@eslint/js';
+import { defineConfig } from 'eslint/config';
 import prettier from 'eslint-config-prettier';
-import eslintPluginImport from 'eslint-plugin-import';
+import { importX } from 'eslint-plugin-import-x';
 import eslintPluginPrettierRecommended from 'eslint-plugin-prettier/recommended';
 import svelte from 'eslint-plugin-svelte';
 import globals from 'globals';
-import ts from 'typescript-eslint';
-import svelteConfig from './svelte.config.js';
+import { configs as tsConfigs, parser as tsParser } from 'typescript-eslint';
 
 const gitignorePath = fileURLToPath(new URL('./.gitignore', import.meta.url));
 
-export default ts.config(
+export default defineConfig(
 	includeIgnoreFile(gitignorePath),
 	js.configs.recommended,
-	...ts.configs.recommended,
+	...tsConfigs.recommended,
 	// import plugin
-	eslintPluginImport.flatConfigs.recommended,
-	eslintPluginImport.flatConfigs.typescript,
+	importX.flatConfigs.recommended,
+	importX.flatConfigs.typescript,
 	...svelte.configs.recommended,
 	prettier,
 	...svelte.configs.prettier,
 	eslintPluginPrettierRecommended, // prettier plugin must be placed at the bottom
 	{
 		languageOptions: {
-			globals: { ...globals.browser, ...globals.node },
+			globals: {
+				...globals.browser,
+				...globals.node,
+			},
 		},
 		rules: {
-			// typescript-eslint strongly recommend that you do not use the no-undef lint rule on TypeScript projects.
-			// see: https://typescript-eslint.io/troubleshooting/faqs/eslint/#i-get-errors-from-the-no-undef-rule-about-global-variables-not-being-defined-even-though-there-are-no-typescript-errors
-			'no-undef': 'off',
-			'import/no-unresolved': 'off', // TODO check why the svelte aliases (eg. $app/xy) don't work with the import plugin
-			'import/order': [
+			'import-x/no-unresolved': 'off', // TODO check why the svelte aliases (eg. $app/xy) don't work with the import plugin
+			// Disable import-x/no-duplicate because of issues with imports from svelte/xy (eg. svelte/animate). TODO Reenable once https://github.com/import-js/eslint-plugin-import/issues/1479 is fixed.
+			'import-x/no-duplicates': 'off',
+			'no-duplicate-imports': 'error',
+			'import-x/order': [
 				'error',
 				{
 					alphabetize: {
@@ -42,37 +45,37 @@ export default ts.config(
 					groups: [
 						'builtin',
 						'external',
+						'type',
 						'internal',
 						'parent',
 						'sibling',
 						'index',
 						'object',
-						'type',
 					],
 					'newlines-between': 'never',
 				},
 			],
-			// Enable checking of the inline order of imports (everything in { ... }) but disables the order of the import statements, since this is done with the 'import/order' rule
+			// Enable checking of the inline order of imports (everything in { ... }) but disables the order of the import statements, since this is done with the 'import-x/order' rule
 			'sort-imports': [
 				'error',
 				{
 					ignoreDeclarationSort: true,
+					ignoreCase: true,
 				},
 			],
 		},
 	},
 	{
-		files: ['**/*.svelte', '**/*.svelte.ts', '**/*.svelte.js'],
+		files: ['**/*.svelte'],
+
 		languageOptions: {
 			parserOptions: {
-				projectService: true,
-				extraFileExtensions: ['.svelte'],
-				parser: ts.parser,
-				svelteConfig,
+				parser: tsParser,
 			},
 		},
 		rules: {
 			'svelte/no-at-html-tags': 'off',
+			'svelte/no-navigation-without-resolve': 'warn',
 		},
 	},
 );
